@@ -1,6 +1,137 @@
+body
+	height 100vh
+	overflow hidden
 .row
 	make-row()
 	margin 0 auto
 	max-width $SiteWidth //medida de la caja fija del diseño general
 	padding-left 10px
 	padding-right @padding-left
+.bgimg
+	position absolute
+	width 100%
+.btn-reservar
+	display none
+	&.active
+		display block
+		font-size 1.5rem
+		padding 1rem 
+		position absolute
+		z-index 2
+
+.content-logos
+	height 6rem
+.cabezote-fijo
+	border 0 
+	height 6rem
+	margin 0
+	padding 0
+	position fixed
+	width 100%
+	z-index 8
+.container
+	z-index 10
+	text-align center
+.continuar-actividad, .boton-validar-placa, .button-actualizar-datos 
+	display block
+	margin 0 auto
+.columna-form2
+	input[type="checkbox"]
+		display inline-block
+		width 10%
+		vertical-align top
+	label
+		display inline-block
+		width 88%
+	span
+		color $Naranja
+.item-destino
+	position relative
+	padding-bottom 2rem
+	border-style dotted solid dashed
+	border-top 0
+	border-right 0
+	border-bottom dotted dashed 0.5rem white
+	border-left 0
+.items-destinos
+	width 100%
+	margin-top 2rem
+	.titulo-item
+		height 4rem
+.item-imagen
+	border solid 0.3rem white
+	border-radius 50%
+	height 19rem
+	overflow hidden
+	width 19rem
+.mascara-img-manzanillo
+	bottom 0
+	height 50vh
+	overflow hidden
+	position absolute
+	width 100%
+	pointer-events none
+	
+.manzanillo
+	bottom -90%
+.logo-estatico
+	position fixed
+.overlay-reserva
+	background-color black
+	height 100%
+	left 0
+	opacity 0.5
+	position relative
+	top 0
+	width 100%
+.moto-bmw,
+.moto-pie,
+.piso,
+.piso-pie,
+.puerta-metalica-dere,
+.puerta-metalica-izq
+	bottom 0
+	position absolute
+	left 0
+.piso, .manzanillo, .piso-pie
+	z-index -3
+.prev, .next
+	margin 2rem
+	font-size 1.5rem
+.moto-bmw, .moto-pie
+	z-index -2
+.puerta-metalica
+	&-dere,
+	&-izq
+		z-index -1
+.titular
+	&-logo-estelar, &-logo-bmw
+		margin 0
+.titulo-descripcion-actividad
+	border-style dotted solid dashed
+	border-top 0
+	border-left 0
+	border-right 0
+	border-bottom dotted solid dashed 0.5rem white
+	padding 3rem 0
+.logo-bmw
+	text-align right
+.logo
+	&-estelar, 
+	&-bmw
+		margin 0
+		padding 0
+		width 50%
+		height 6rem
+		float left
+
+.vp
+	position relative
+	box-sizing border-box
+	float left
+	height 100vh
+	padding 0
+	width 99vw
+	
+	&.formulario, &.destino
+		height 100vh	
