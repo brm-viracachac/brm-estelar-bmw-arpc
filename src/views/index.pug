@@ -1,0 +1,38 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Home";
+	title Home BBB Clear2
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="Instagram Clear 2" )
+
+block content
+	section.container-fluid.container-primer-art
+		div.row
+			article.content-article
+				p.parrafo-article ¿Música, escritura o escultura? Cuéntanos a través de una foto o video de qué estás hecho. Participa subiendo tu publicación en redes sociales con el #EstoyHechoDe.
+				h2.titulo-article ¡Las mejores historias serán premiadas con todo el sabor de BBB!
+		div.row.instagram-thumbs-art
+			div.content-thumbs-art
+				-for (var i=1; i<19; i++)
+					div.thumb-instagram
+						a.invisible-button(type="button" data-toggle="modal" data-target="#myModal")
+						div.thumb-content-instagram
+							//- img(src="https://pp.userapi.com/c629327/v629327473/db66/r051joYFRX0.jpg")
+							+image("thumb-instagram.jpg", 'Video Instagram')(class="img-responsive")
+						p.user-instagram @mariamaya
+				div.modal.fade.bd-example-modal-sm(id="myModal" tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel', aria-hidden='true')
+					div.modal-dialog
+						div.modal-content
+							span.glyphicon.glyphicon-remove-circle
+							+image("thumb-instagram.jpg", 'Video Instagram')(class="img-responsive")
+							p.user-instagram @mariamaya
+					
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página
+

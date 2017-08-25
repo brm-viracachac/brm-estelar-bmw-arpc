@@ -1,0 +1,41 @@
+//Footer
+if titulo == "Producto"
+	footer.container-fluid.container-footer-fixed
+		div.row
+			ul.content-footer-lista
+				li.logo-bbb
+					span BONBONBUM
+				li.logo-clear
+					span CLEAR 2
+				li.terminos-footer
+					a(href="terminos.html" class="link-terminos") Términos y Condiciones
+				li.logo-colombina
+					span COLOMBINA
+else
+	footer.container-fluid.container-footer
+		div.row
+			ul.content-footer-lista
+				li.logo-bbb
+					span BONBONBUM
+				li.logo-clear
+					span CLEAR 2
+				li.terminos-footer
+					a(href="terminos.html" class="link-terminos") Términos y Condiciones
+				li.logo-colombina
+					span COLOMBINA
+
+
+///-Footer
+
+//Scripts
+//-Estos son los scripts que van en todos los htmls del desarrollo
+if debug == true
+	script(src='js/libs/jquery.js')
+	script(src="js/libs/jquery.validate.js")
+	script(src='js/libs/bootstrap.min.js')
+	script(src='js/bbb-clear2.js')
+
+else
+	script(src='js/libs/jquery.js')
+	script(src="js/libs.min.js")
+	script(src='js/bbb-clear2.js')

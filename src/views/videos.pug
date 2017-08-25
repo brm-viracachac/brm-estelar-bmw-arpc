@@ -1,0 +1,24 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	title Clear2 - Videos
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="Video Clear2" )
+
+block content
+	section.container-fluid.container-video
+		div.row
+			h1.content-descripcion-video.titulo-video-des ¡La generación más transparente quiere ser escuchada! Bon Bon Bum te da este espacio para expresarte con todo tu sabor.
+		div.row
+			div.content-video
+				include ../templates/includes/button-play.svg
+				div.padding-imagen
+					+image("bg-video.jpg", 'thumb-video-clear')(class="img-responsive visualvideo")
+					div.envevisto.embed-responsive.embed-responsive-16by9.hidden
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página

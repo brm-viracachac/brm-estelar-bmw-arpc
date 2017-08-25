@@ -1,0 +1,22 @@
+//Header
+header.container-fluid
+	div.row
+		nav.bar.navegacion
+			button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+
+			if titulo == "Home"
+				h1.estoy-rojo
+					a(href="index.html", rel="tag")
+						include ../includes/estoyhechode.svg
+			else
+				h2.estoy-blanco
+					a(href="index.html", rel="tag")
+						include ../includes/estoyhechode.svg
+			
+			include menu.pug
+
+///-Header

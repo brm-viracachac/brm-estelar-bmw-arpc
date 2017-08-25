@@ -1,0 +1,31 @@
+.estoy
+	&-blanco,
+	&-rojo
+		display inline-block
+		z-index 2
+		a
+			display block
+			position relative
+			width 100%
+			heiht 100%
+			z-index 2
+
+	&-rojo
+		svg#ht
+			path
+				fill $Rojobbb
+		&:hover
+			svg#ht
+				path
+					fill #fff
+	&-blanco
+		svg#ht
+			path
+				fill white
+		&:hover
+			svg#ht
+				path
+					fill $Rojobbb
+.navegacion
+	.item
+		padding 1rem 2rem

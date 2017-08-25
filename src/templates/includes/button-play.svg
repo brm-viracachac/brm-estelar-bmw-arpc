@@ -1,0 +1,15 @@
+<svg version="1.1" id="btn-play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="50%" viewBox="0 0 160 160" style="enable-background:new 0 0 160 160;" xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:2.9934;stroke-miterlimit:10;}
+]]>
+</style>
+<g>
+	<g>
+		<path class="st0" d="M64.3,54.7v47.5L105,78.5L64.3,54.7L64.3,54.7z"/>
+		<circle class="st1" cx="80" cy="80" r="77.5"/>
+	</g>
+</g>
+</svg>

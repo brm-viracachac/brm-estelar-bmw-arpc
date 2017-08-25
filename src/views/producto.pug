@@ -1,0 +1,23 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	-var titulo = "Producto";
+	title Clear2 - Producto
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="Clear2 - Producto" )
+
+block content
+	section.container-fluid.container-producto
+		div.row
+			+image("bonbonbum-de-que-estas-hecho-persona.png",'¿DE QUÉ ESTÁS HECHO? MUÉSTRATE COMO ERES TRANSPARENTE')(class="img-responsive, img-de-que-estas-hecho")
+			+image("nuevo-bonbonbum-clear-2.png", 'ÚNICO COMO TU')(class="img-responsive, img-unico-como-tu")
+			div.producto.columna-uno
+			div.producto.columna-dos
+				p.parrafo-producto Transparente, no ocultas nada. Seguro cuentas tus mejores historias alrededor de una fogata, en el colegio, o en tu universidad. ¡Llegó el momento de mostrarle al mundo quien eres!
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página
