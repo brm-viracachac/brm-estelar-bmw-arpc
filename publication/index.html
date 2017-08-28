@@ -4,13 +4,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="es-CO"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ESTELAR - A rodar por Colombia</title>
+  <title>HOTELES ESTELAR - A rodar por Colombia</title>
   <meta name="description" content="A rodar por Colombia">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/frontend-brm.min.css">
-  <!-- Web Fonts-->
-  <link href="http://fonts.googleapis.com/css?family=Varela+Round|Roboto:400italic,300,700,400" rel="stylesheet" type="text/css"><!--[if lt IE]>
+  <link rel="stylesheet" href="css/frontend-brm.min.css"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
   <script src="js/libs/modernizr-2.6.2.min.js"></script>
@@ -19,17 +17,16 @@
   <!--Header-->
   <header class="content-logos">
     <div class="cabezote-fijo">
-      <div class="logo-estelar">
-        <h1 class="titular-logo-estelar"><img class="img-restelar" src="images/estelar-logo.png" title="ESTELAR" alt="ESTELAR"/>
-        </h1>
-      </div>
-      <div class="logo-bmw">
-        <h1 class="titular-logo-bmw"><img class="img-restelar" src="images/bmw-logo.png" title="BMW Motorrad" alt="BMW Motorrad"/>
-        </h1>
+      <div class="logo-estelar animated slideInDown"><a class="link-pagina-estelar" href="http://www.hotelesestelar.com/" target="_blank" rel="no-follow">
+          <h1 class="titular-logo-estelar"><img class="img-restelar" src="images/estelar-logo.png" title="HOTELES ESTELAR" alt="HOTELES ESTELAR"/>
+          </h1></a></div>
+      <div class="logo-bmw animated slideInDown">
+        <h2 class="titular-logo-bmw"><img class="img-restelar" src="images/bmw-logo.png" title="BMW Motorrad" alt="BMW Motorrad"/>
+        </h2>
       </div>
     </div>
   </header>
-  <div class="logo-estatico inicial">
+  <div class="logo-estatico inicial animated bounceIn">
 <svg version="1.1" id="arptc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100%" viewBox="0 0 404.9 395.8" style="enable-background:new 0 0 404.9 395.8;" xml:space="preserve"
 	>
@@ -382,8 +379,8 @@
     <div class="container content-descripcion-actividad">
       <div class="row">
         <article class="articulo-descripcion-actividad">
-          <h2 class="titulo-descripcion-actividad">HOTELES ESTELAR <br/><span>Y BMW MOTORRAD </span></h2>
-          <p class="parrafo-descripcion-actividad"> Aprovecha un 20% de descuento <br/> en nuestros hoteles</p>
+          <h2 class="titulo-descripcion-actividad animated bounceIn">HOTELES ESTELAR <br/><span>Y BMW MOTORRAD </span></h2>
+          <p class="parrafo-descripcion-actividad animated bounceIn"> Aprovecha un 20% de descuento <br/> en nuestros hoteles</p>
         </article>
         <div class="logo-a-rodar-por-colombia">
 <svg version="1.1" id="arptc" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -734,18 +731,23 @@
 </svg>
 
         </div>
-        <button class="btn-nav continuar-actividad external" data-link="validar-placa">CONTINUAR</button>
+        <button class="btn-nav continuar-actividad external animated pulse infinite" data-link="validar-placa" type="button">CONTINUAR</button>
       </div>
     </div>
   </section>
   <section class="vp llenar-formulario" id="validar-placa">
     <div class="container content-validar-placa">
       <div class="row">
-        <p class="texto-validar-placa">Para acceder al beneficio, Ingresa el número de la placade tu motocicleta.</p>
-        <form class="form form-validar-placa">
-          <label class="titulo-placa" for="placa">PLACA</label>
-          <input class="campo-validar-placa" id="placa" name="placa" type="text" minlength="5" maxlength="6">
-          <button class="btn-nav boton-validar-placa" type="button" data-link="llenar-formulario">CONTINUAR</button>
+        <p class="texto-validar-placa">Para acceder al beneficio, Ingresa el número de la placa de tu motocicleta.</p>
+        <form class="form form-validar-placa" id="form-validar-placa">
+          <div class="form alertas-placas">
+            <p><span class="mensaje-alerta"></span></p>
+          </div>
+          <div class="form form-placa">
+            <label class="titulo-placa" for="placa">PLACA</label>
+            <input class="campo-validar-placa" id="placa" name="placa" type="text" minlength="5" maxlength="6">
+            <button class="boton-validar-placa animated pulse infinite" type="button" data-link="llenar-formulario">CONTINUAR</button>
+          </div>
         </form>
       </div>
     </div><img class="bgimg puerta-metalica-izq" src="images/puerta-izq.png" title="puerta-bmw" alt="puerta-bmw"/><img class="bgimg puerta-metalica-dere" src="images/puerta-dere.png" title="puerta-bmw" alt="puerta-bmw"/><img class="bgimg moto-bmw" src="images/moto.png" title="moto-bmw" alt="moto-bmw"/><img class="bgimg piso" src="images/piso.png" title="piso-bmw" alt="piso-bmw"/>
@@ -753,33 +755,52 @@
   <section class="vp formulario elegir-hotel" id="llenar-formulario">
     <div class="container-fluid content-actualizar-datos">
       <div class="row">
-        <form class="form from-actualizar-datos">
+        <form class="form from-actualizar-datos" id="form-actualizar-datos">
           <button class="desplegar-info" type="button">ACTUALIZAR DATOS</button>
           <div class="columna-form1">
-            <label for="nombre">NOMBRE DEL PROPIETARIO:</label>
-            <input id="nombre" name="nombre" type="text">
-            <label for="cedula">CÉDULA:</label>
-            <input id="cedula" name="cedula" type="number">
-            <label for="linea">LÍNEA MOTOCICLETA:</label>
-            <select>
-              <option>Opción 1</option>
-            </select>
-            <label for="modelo">MODELO:</label>
-            <select>
-              <option>Opción 2</option>
-            </select>
-            <label for="ciudad">Ciudad</label>
-            <input id="ciudad" name="ciudad" type="text">
+            <div class="form alertas-actualizar">
+              <p><span class="mensaje-alerta"></span></p>
+            </div>
+            <div class="form form-nombre">
+              <label for="nombre">NOMBRE DEL PROPIETARIO:</label>
+              <input id="nombre" name="nombre" type="text">
+            </div>
+            <div class="form form-cedula">
+              <label for="cedula">CÉDULA:</label>
+              <input id="cedula" name="cedula" type="number">
+            </div>
+            <div class="form form-linea">
+              <label for="linea">LÍNEA MOTOCICLETA:</label>
+              <select>
+                <option>Opción 1</option>
+              </select>
+            </div>
+            <div class="form form-modelo">
+              <label for="modelo">MODELO:</label>
+              <select>
+                <option>Opción 2</option>
+              </select>
+            </div>
+            <div class="form form-cuidad">
+              <label for="ciudad">Ciudad</label>
+              <input id="ciudad" name="ciudad" type="text">
+            </div>
           </div>
           <div class="columna-form2">
-            <input type="checkbox" id="autorizacion" name="autorizacion">
-            <label for="autorizacion">Autorizo voluntariamente a <span>hoteles estelar</span> para tratar mis datos personales de acuerdo con lo dispuesto en la Ley 1581 de 2012, el Decreto Único 1074 de 2015 y la política de tratamiento de datos personales de Pernod Ricard Colombia. La Información será utilizada para contactarme e informarme sobre actividades de publicidad, mercadeo, comerciales, fidelización, encuestas y eventos.</label>
-            <input type="checkbox" id="aceptar" name="aceptar">
-            <label for="aceptar">Conozco y acepto términos y condiciones de <span>A rodar con hoteles y bmw</span></label>
-            <input type="checkbox" id="declaro" name="declaro">
-            <label for="declaro">Declaro que he leído y acepto <span>la política de tratamiento de datos personales</span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.</label>
+            <div class="form form-autorizacion">
+              <input type="checkbox" id="autorizacion" name="autorizacion">
+              <label for="autorizacion">Autorizo voluntariamente a <span>hoteles estelar</span> para tratar mis datos personales de acuerdo con lo dispuesto en la Ley 1581 de 2012, el Decreto Único 1074 de 2015 y la política de tratamiento de datos personales de Pernod Ricard Colombia. La Información será utilizada para contactarme e informarme sobre actividades de publicidad, mercadeo, comerciales, fidelización, encuestas y eventos.</label>
+            </div>
+            <div class="form form-aceptar">
+              <input type="checkbox" id="aceptar" name="aceptar">
+              <label for="aceptar">Conozco y acepto términos y condiciones de <span>A rodar con hoteles y bmw</span></label>
+            </div>
+            <div class="form form-declaro">
+              <input type="checkbox" id="declaro" name="declaro">
+              <label for="declaro">Declaro que he leído y acepto <span>la política de tratamiento de datos personales</span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.</label>
+            </div>
           </div>
-          <button class="btn-nav boton-actualizar-datos" type="button" data-link="elegir-hotel">Actualizar Datos</button>
+          <button class="boton-actualizar-datos animated pulse infinite" type="button" data-link="elegir-hotel">Actualizar Datos</button>
         </form>
         <div class="informacion-manzanillo"></div>
       </div>
@@ -796,66 +817,57 @@
             <option>Bogotá</option>
           </select>
           <div class="items-destinos">
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR Windsor house</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR suites jones</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR parque de la 93</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR calle 100</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR calle 100</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR calle 100</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR calle 100</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR calle 100</h4>
             </div>
-            <div class="item-destino">
+            <div class="item-destino"><a class="selecionar-hotel" href="#" rel="no-follow"></a>
               <div class="item-imagen">
-                <button class="btn-reservar active">RESERVAR</button>
-                <div class="overlay-reserva"></div><img src="images/aaa.png">
+                <btn class="btn-reservar">RESERVAR</btn><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa">
               </div>
               <h4 class="titulo-item">Hotel ESTELAR calle 100</h4>
             </div>
@@ -871,7 +883,7 @@
   <footer class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
-        <h5 class="block-center text-center">Footer Content</h5>
+        <h5 class="block-center text-center">TÉRMINOS Y CONDICIONES</h5>
       </div>
     </div>
   </footer>

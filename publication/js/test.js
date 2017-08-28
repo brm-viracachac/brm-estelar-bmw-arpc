@@ -1,1 +1,0 @@
-"use strict";var demo="variable",fijo="const";demo=function(){for(var o=0;o<5;o++)console.log(o)},jQuery(document).ready(function(o){console.log("hola"),o(".continuar-actividad").click(function(){var c=o(this).attr("class");console.log(c)})});

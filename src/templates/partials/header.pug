@@ -1,9 +1,10 @@
 //Header
 header.content-logos
 	div.cabezote-fijo
-		div.logo-estelar
-			h1.titular-logo-estelar
-				+image('estelar-logo.png', 'ESTELAR')(class="img-restelar")
-		div.logo-bmw
-			h1.titular-logo-bmw
+		div.logo-estelar.animated.slideInDown
+			a.link-pagina-estelar(href="http://www.hotelesestelar.com/", target="_blank", rel="no-follow")
+				h1.titular-logo-estelar
+					+image('estelar-logo.png', 'HOTELES ESTELAR')(class="img-restelar")
+		div.logo-bmw.animated.slideInDown
+			h2.titular-logo-bmw
 				+image('bmw-logo.png', 'BMW Motorrad')(class="img-restelar")

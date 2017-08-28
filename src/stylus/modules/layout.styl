@@ -1,6 +1,10 @@
-body
+*
+	&:focus
+		outline 0
+html, body
 	height 100vh
 	overflow hidden
+	// overflow-x hidden
 .row
 	make-row()
 	margin 0 auto
@@ -18,6 +22,7 @@ body
 		padding 1rem 
 		position absolute
 		z-index 2
+		cursor pointer
 
 .content-logos
 	height 6rem
@@ -30,11 +35,14 @@ body
 	width 100%
 	z-index 8
 .container
-	z-index 10
 	text-align center
+	z-index 10
 .continuar-actividad, .boton-validar-placa, .button-actualizar-datos 
 	display block
 	margin 0 auto
+.columna-form1
+	div.msn-place
+		font-size 1.5rem
 .columna-form2
 	input[type="checkbox"]
 		display inline-block
@@ -45,14 +53,18 @@ body
 		width 88%
 	span
 		color $Naranja
+	div.msn-place
+		display inline-block
+.img-restelar
+	max-width 27.6rem
 .item-destino
-	position relative
-	padding-bottom 2rem
-	border-style dotted solid dashed
-	border-top 0
-	border-right 0
 	border-bottom dotted dashed 0.5rem white
 	border-left 0
+	border-right 0
+	border-style dotted solid dashed
+	border-top 0
+	padding-bottom 2rem
+	position relative
 .items-destinos
 	width 100%
 	margin-top 2rem
@@ -64,26 +76,38 @@ body
 	height 19rem
 	overflow hidden
 	width 19rem
+	.tumb-hotel
+		height 100%
+		left 0
+		max-width 30rem
+		max-height 30rem
+		object-fit cover
+		position relative
+		top 0
+		width 100%
 .mascara-img-manzanillo
 	bottom 0
 	height 50vh
 	overflow hidden
+	pointer-events none
 	position absolute
 	width 100%
-	pointer-events none
 	
 .manzanillo
 	bottom -90%
 .logo-estatico
 	position fixed
 .overlay-reserva
-	background-color black
-	height 100%
-	left 0
-	opacity 0.5
-	position relative
-	top 0
-	width 100%
+	display none
+	&.active
+		display block
+		background-color black
+		height 100%
+		left 0
+		opacity 0.5
+		position absolute
+		top 0
+		width 100%
 .moto-bmw,
 .moto-pie,
 .piso,
@@ -91,13 +115,13 @@ body
 .puerta-metalica-dere,
 .puerta-metalica-izq
 	bottom 0
-	position absolute
 	left 0
+	position absolute
 .piso, .manzanillo, .piso-pie
 	z-index -3
 .prev, .next
-	margin 2rem
 	font-size 1.5rem
+	margin 2rem
 .moto-bmw, .moto-pie
 	z-index -2
 .puerta-metalica
@@ -119,19 +143,42 @@ body
 .logo
 	&-estelar, 
 	&-bmw
+		float left
+		height 6rem
 		margin 0
 		padding 0
 		width 50%
-		height 6rem
-		float left
-
+.form
+	&.alertas-placas,
+	&.alertas-actualizar
+		display none
+		&.active
+			background-color $Azul
+			color white
+			display block
+			height 3rem
+			font-size 2rem
+			margin 0 auto
+			text-align center
+	&.alertas-placas
+		&.active
+			width 50%
+	&.alertas-actualizar
+		width 100%
+.selecionar-hotel
+	cursor pointer
+	display block
+	height 100%
+	position absolute
+	width 100%
+	z-index 2
 .vp
-	position relative
 	box-sizing border-box
 	float left
 	height 100vh
 	padding 0
+	position relative
 	width 99vw
 	
 	&.formulario, &.destino
-		height 100vh	
+		height 100vh

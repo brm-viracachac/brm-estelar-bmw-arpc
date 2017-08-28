@@ -9,26 +9,39 @@ a
 	text-decoration none
 	
 	&:hover
-		text-decoration underline
+		text-decoration none
+		cursor pointer
+	&:focus, &:visited
+		outline 0
 		
 	img
 		border 0
 	
 body
+	path('bg.png')
+	bacgroung-repeat repeat
 	background-color black
 	color white
 	font-size 1.3em
 	font-family $bebas
-button
+button, .btn-reservar
 	background-color transparent
 	border solid 0.2rem white
+	color white
 	font-size 2.5rem
 	padding 1rem
+	&:hover
+		border-color darken($Azul, 40%)
+		color darken($Azul, 40%)
+		transitionBase()
+	&:focus, &:visited, &:active
+		color $Naranja
+		outline 0
 footer
 	clear both
 h1, h2, h3
-	font-family $bebas
 	color white
+	font-family $bebas
 input
 	background-color transparent
 	border solid 0.2rem white
@@ -37,9 +50,9 @@ label
 	width 100%
 select
 	background-color transparent
-	width 100%
 	border solid 0.2rem white
 	border-radius none
 	padding 1rem
+	width 100%
 #arptc
 	fill white
