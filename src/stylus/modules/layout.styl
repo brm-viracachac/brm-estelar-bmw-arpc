@@ -20,15 +20,22 @@ html, body
 	position absolute
 	width 100%
 .btn-reservar
-	display none
-	&.active
-		display block
-		font-size 1.5rem
-		padding 1rem 
-		position absolute
-		z-index 2
-		cursor pointer
-
+	border solid 0.2rem white
+	display block
+	color white
+	padding 0.3rem
+	position absolute
+	z-index 3
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	&:hover
+		border-color darken($Naranja, 40%)
+		color lighten($Naranja, 40%)
+	&:focus
+		border-color lighten($Naranja, 40%)
+		color lighten($Naranja, 40%)
+		text-decoration none
 .content-logos
 	height 6rem
 .cabezote-fijo
@@ -73,20 +80,28 @@ html, body
 		font-size 2rem
 .img-restelar
 	max-width 27.6rem
+.item-imagen
+	position relative
 .item-destino
 	border-bottom dotted dashed 0.5rem white
 	border-left 0
 	border-right 0
 	border-style dotted solid dashed
 	border-top 0
+	float left
 	padding-bottom 2rem
 	position relative
 .items-destinos
 	width 100%
 	margin-top 2rem
+	min-width 30rem
 	.titulo-item
-		height 4rem
 		padding 1rem
+		text-shadow 0 0 1.1px black
+		height 5.8rem
+		// .selecionar-hotel
+		// 	text-shadow 0 0 1px black
+		// 	color white
 .item-imagen
 	border solid 0.3rem white
 	border-radius 50%
@@ -94,14 +109,13 @@ html, body
 	overflow hidden
 	width 19rem
 	.tumb-hotel
-		height 100%
 		left 0
-		max-width 30rem
 		max-height 30rem
+		max-width 30rem
 		object-fit cover
 		position relative
 		top 0
-		width 100%
+
 .mascara-img-manzanillo
 	bottom 0
 	height 50vh
@@ -186,13 +200,14 @@ html, body
 			width 50%
 	&.alertas-actualizar
 		width 100%
-.selecionar-hotel
-	cursor pointer
-	display block
-	height 100%
-	position absolute
-	width 100%
-	z-index 2
+// .selecionar-hotel
+// 	cursor pointer
+// 	display block
+// 	z-index 2
+// 	&.imagen
+// 		position absolute
+// 		top 0
+
 .visible
 	display block
 .vp
