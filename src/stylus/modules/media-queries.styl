@@ -63,8 +63,16 @@
 		font-size 3rem
 // medida iphone 4
 @media (min-width: 320px)
+	html, body
+		overflow auto
+	.columna-form2
+		font-size 1.5rem
+		padding-top 3rem
+		position relative
+		label
+			width 84%
 	.desplegar-info
-		display block
+		display none
 		margin 1rem auto
 		&.unactive
 			display none
@@ -89,7 +97,7 @@
 	.bgimg.manzanillo
 		bottom 0
 	.boton-actualizar-datos
-		display none
+		display block
 		margin 1rem auto
 		&.active
 			display block
@@ -101,9 +109,11 @@
 		top 50%
 		left 50%
 	.columna-form1, .columna-form2
-		display none
+		display block
 		&.active
-			display block	
+			display block
+	.columna-form2
+		padding-top 0
 	.cabezote-fijo
 		height 10rem
 		position relative
@@ -113,13 +123,7 @@
 		width 100%
 	.form.from-actualizar-datos
 		font-size 2rem
-		height 8rem
-		overflow hidden
 		padding-top 0
-		&.active
-			height 100vh
-			overflow scroll
-
 	.form.from-actualizar-datos.active
 		background-color black
 		display block
@@ -157,6 +161,7 @@
 	.campo-validar-placa
 		height 4rem
 		text-align center
+		font-size 2rem
 // portrait estilos
 @media (min-width: 768px) and (orientation:portrait)
 	.boton-validar-placa, .continuar-actividad
@@ -194,7 +199,14 @@
 	.logo-a-rodar-por-colombia
 		margin 0 auto
 		width 80%
+@media (min-width: 992px)
+	.columna-form2
+		position absolute
+		bottom 26%
+		right 0
 @media (min-width: 1024px)
+	html, body
+		overflow hidden
 	.desplegar-info
 		display none
 	.boton-actualizar-datos
@@ -243,14 +255,14 @@
 	.cabezote-fijo
 		position fixed
 	.columna-form1, .columna-form2
-		height 65vh
+		height 58vh
 	.columna-form1, .columna-form2
 		display block
 	.columna-form1
 		padding-top 7%
 	.columna-form2
 		font-size 1.2rem
-		padding-top 27%
+		// padding-top 27%
 	.content-destino
 		margin-top 10%
 		margin-left 30%
@@ -300,7 +312,7 @@
 	.columna-form1
 		padding-top 1%
 	.columna-form2
-		padding-top 15%
+		padding-top 3rem
 		font-size 1.5rem
 	.texto-validar-placa
 		margin-top 1%
@@ -358,7 +370,7 @@
 		padding-top 25%
 @media (min-width: 1370px) and (max-width: 1825px), (min-height: 768px) and (max-height: 968px)
 	.columna-form2
-		padding-top 27%
+		padding-top 17%
 @media (max-width: 736px) and (max-height: 414px) and (orientation:landscape)
 	.articulo-descripcion-actividad, .logo-a-rodar-por-colombia
 		width 50%
@@ -484,8 +496,8 @@
 	.columna-form2.active
 		font-size 1.9rem
 	.item-imagen
-		width 18rem
-		height 18rem
+		width 15rem
+		height 15rem
 	.form.from-actualizar-datos.active
 		background-color transparent
 		font-size 3rem
@@ -522,8 +534,6 @@
 		font-size 1.5rem
 	.img-restelar
 		width 27.6rem
-	.items-destinos
-		overflow -webkit-paged-x
 	.item-destino
 		font-size 1rem	
 		width 20%
@@ -539,7 +549,7 @@
 		margin-top 0
 		font-size 3rem
 	.titulo-item
-		font-size 1.5rem
+		font-size 2.5rem
 	.titulo-placa
 		font-size 5rem
 	.puerta-metalica-izq, .puerta-metalica-dere, .moto-bmw

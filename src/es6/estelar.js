@@ -1,7 +1,15 @@
 
-
 // navegacion items
 jQuery(document).ready(function($) {
+			// var element = document.getElementsByTagName('from-actualizar-datos');
+  
+			// 	if(element.scrollHeight > element.clientHeight) {
+			// 	  // Overflow detected; force scroll bar
+			// 	  element.style.overflow = 'scrollbar';
+			// 	} else {
+			// 	  // No overflow detected; prevent scroll bar
+			// 	  // element.style.overflow = 'hidden';
+			// }
 
 			/// validación formulario
 				var $formPlaca = jQuery('#form-validar-placa');
@@ -17,10 +25,11 @@ jQuery(document).ready(function($) {
 
 					/// ocultar las pantallas
 					$('.'+vinculo).hide('500', function(){
-
+						$(this).addClass('ocultar-seccion');
+						$('#'+vinculo).removeClass('seccion-oculta');
 						$('.logo-estatico').attr('class', 'logo-estatico').addClass(vinculo);
-						$('.puerta-metalica-izq').addClass('animated bounceInRight')
-						$('.puerta-metalica-dere, .moto-bmw').addClass('animated bounceInLeft')
+						$('.puerta-metalica-izq').addClass('animated bounceInRight');
+						$('.puerta-metalica-dere, .moto-bmw').addClass('animated bounceInLeft');
 						//$('.logo').toggleClass(vinculo);
 						location.href = ruta + vinculo;
 					});
@@ -63,12 +72,13 @@ jQuery(document).ready(function($) {
 				errorElement: 'div',
 				errorClass: 'msn-place',
 				rules: {
-					placa: {required:true,placa:true}
+					placa: {required:true,placa:true, minlength:5}
 				},
 				messages: {
 					placa: {
 						required:'Indica la placa de tu moto',
-						placa:'Ingresa una placa v&aacute;lida'
+						placa:'Ingresa una placa v&aacute;lida',
+						minlength:'M&iacute;nimo cinco caracteres'
 					  }
 				}
 				// errorPlacement
