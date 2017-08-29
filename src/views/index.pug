@@ -70,8 +70,11 @@ block content
 								select
 									option Opción 2
 							div.form.form-cuidad
+								label(for="departamento") DEPARTAMENTO
+								select(id="departamento", name="departamento", type="text", placeholder="BOGOTÁ")
+							div.form.form-cuidad
 								label(for="ciudad") Ciudad
-								input(id="ciudad", name="ciudad", type="text", placeholder="BOGOTÁ")
+								select(id="ciudad", name="ciudad", type="text", placeholder="BOGOTÁ")
 						div.columna-form2
 							div.form.form-autorizacion
 								input(type="checkbox", id="autorizacion", name="autorizacion")
@@ -116,10 +119,10 @@ block content
 						each item, contador in list
 							div.item-destino.bounceInUp
 								div.item-imagen
-									a.selecionar-hotel.btn-reservar(href="#", target="_blanck") RESERVAR
+									a.selecionar-hotel.btn-reservar(href="#", target="_blank") RESERVAR
 									//- div.overlay-reserva
 									img.tumb-hotel(src='images/hotel-estelar.png' alt="aa" title="aa")
-								h4.titulo-item: a.selecionar-hotel(href="#", target="_blanck") #{item}
+								h4.titulo-item: a.selecionar-hotel(href="#", target="_blank") #{item}
 						div.botones
 						
 						//- div.row-destino

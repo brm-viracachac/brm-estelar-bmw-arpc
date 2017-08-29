@@ -92,6 +92,7 @@ jQuery(document).ready(function($) {
 					cedula: 		{required:true, digits:true, minlength:7},
 					linea: 			{required:true},
 					modelo: 		{required:true},
+					departamento: 	{required:true},
 					ciudad: 		{required:true},
 					autorizacion: 	{required:true},
 					aceptar: 		{required:true},
@@ -112,6 +113,9 @@ jQuery(document).ready(function($) {
 				  },
 				modelo:{
 					required:'Elige un modelo'
+				  },
+				departamento:{
+				  	required:'Indica tu departamento'
 				  },
 				ciudad:{
 				  	required:'Indica tu ciudad'
