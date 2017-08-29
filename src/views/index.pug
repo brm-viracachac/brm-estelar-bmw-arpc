@@ -94,18 +94,18 @@ block content
 				div.content-destino
 					label(for="destino" class="titulo-destino") SELECCIONE DESTINO
 					select
-						option BARRANQUILLA
-						option BOGOTÁ
-						option BUCARAMANGA
-						option CALI
-						option CARTAGENA
-						option IBAGUÉ
-						option MANIZALES
-						option MEDELLÍN
-						option PAIPA
-						option SANTAMARTA
-						option VILLAVICENCIO
-						option YOPAL
+						option(value="1") BARRANQUILLA
+						option(value="2")  BOGOTÁ
+						option(value="3")  BUCARAMANGA
+						option(value="4")  CALI
+						option(value="5")  CARTAGENA
+						option(value="5")  IBAGUÉ
+						option(value="6")  MANIZALES
+						option(value="7")  MEDELLÍN
+						option(value="8")  PAIPA
+						option(value="9") SANTAMARTA
+						option(value="10")  VILLAVICENCIO
+						option(value="11")  YOPAL
 					
 					div.items-destinos
 						//- div.row-destino
@@ -114,13 +114,12 @@ block content
 						-img = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 						-link = ['#', '#', '#', '#']
 						each item, contador in list
-							div.item-destino
-								a.selecionar-hotel(href="#", rel="no-follow")
+							div.item-destino.bounceInUp
 								div.item-imagen
-									btn.btn-reservar RESERVAR
+									a.selecionar-hotel.btn-reservar(href="#", target="_blanck") RESERVAR
 									//- div.overlay-reserva
 									img.tumb-hotel(src='images/hotel-estelar.png' alt="aa" title="aa")
-								h4.titulo-item #{item}
+								h4.titulo-item: a.selecionar-hotel(href="#", target="_blanck") #{item}
 						div.botones
 						
 						//- div.row-destino
