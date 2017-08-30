@@ -22,12 +22,12 @@ jQuery(document).ready(function($) {
 			function animatePage(vinculo){
 					//var ruta = "http://localhost:3000/index.html#";
 					//$formPlaca.submit();
-
 					/// ocultar las pantallas
-					$('.'+vinculo).hide('500', function(){
+					$('.'+vinculo).hide('1500', function(){
 						$(this).addClass('ocultar-seccion');
 						$('#'+vinculo).removeClass('seccion-oculta');
 						$('.logo-estatico').attr('class', 'logo-estatico').addClass(vinculo);
+						$('.logo-estatico.llenar-formulario').addClass('fadeOut');
 						$('.puerta-metalica-izq').addClass('animated bounceInRight');
 						$('.puerta-metalica-dere, .moto-bmw').addClass('animated bounceInLeft');
 						//$('.logo').toggleClass(vinculo);
@@ -90,6 +90,7 @@ jQuery(document).ready(function($) {
 				rules: {
 					nombre: 		{required:true,letras:true},
 					cedula: 		{required:true, digits:true, minlength:7},
+					email: 			{required:true, email:true},
 					linea: 			{required:true},
 					modelo: 		{required:true},
 					departamento: 	{required:true},
@@ -107,6 +108,10 @@ jQuery(document).ready(function($) {
 					required:'Indica tu n&uacute;mero de c&eacute;dula',
 					digits:'solo se acepta n&uacute;meros',
 					minlength: 'M&iacute;nimo siete n&uacute;meros'
+				  },
+				email:{
+					required:'Indica tu correo',
+					email:'Ingresa un c&oacute;digo v&aacute;lido'
 				  },
 				linea: {
 					required:'Elige una l&iacute;nea'
@@ -129,6 +134,13 @@ jQuery(document).ready(function($) {
 				declaro:{
 				  	required:'Declara que haz le&iacute;do la p&oacute;litica de tratamiento de datos'
 				  }
+				},
+				errorPlacement : function (a, b) {
+					if (b.attr("type") == 'checkbox') {
+						a.insertAfter(b.next('label'));
+					} else {
+						a.insertAfter(b);
+					}
 				}
 				// errorPlacement
 			});
