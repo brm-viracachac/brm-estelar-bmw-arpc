@@ -5,6 +5,11 @@ html, body
 	min-heght 76.8rem
 	height 100vh
 	overflow-x hidden
+div.msn-place
+	font-family Arial
+	font-size 1.5rem
+	color $Azul
+
 .row
 	make-row()
 	margin 0 auto
@@ -14,21 +19,21 @@ html, body
 .ancla-terminos
 	color $Naranja
 	&:hover
-			color lighten($Naranja, 20%)
-		
+		color lighten($Naranja, 20%)	
 .bgimg
 	position absolute
 	width 100%
 .btn-reservar
+	background-color rgba(0,0,0,0.5)
 	border solid 0.2rem white
-	display block
 	color white
-	padding 0.3rem
-	position absolute
-	z-index 3
-	top 50%
+	display block
 	left 50%
+	padding 0.3rem 1rem
+	position absolute
+	top 50%
 	transform translate(-50%, -50%)
+	z-index 3
 	&:hover
 		border-color darken($Naranja, 40%)
 		color lighten($Naranja, 40%)
@@ -36,6 +41,10 @@ html, body
 		border-color lighten($Naranja, 40%)
 		color lighten($Naranja, 40%)
 		text-decoration none
+.boton-validar-placa,
+.boton-actualizar-datos,
+.continuar-actividad 
+	width 100%
 .content-logos
 	height 6rem
 .cabezote-fijo
@@ -52,35 +61,42 @@ html, body
 .continuar-actividad, .boton-validar-placa, .button-actualizar-datos 
 	display block
 	margin 0 auto
+	
+.content-validar-placa
+	padding-top 4rem
+.content-actualizar-datos
+	padding-top 4rem
 .columna-form1
-	div.msn-place
-		font-family Arial
-		font-size 2rem
-		color $Naranja
-// .columna-form2
-// 	font-family Arial
-// 	line-height 1.7rem
-// 	position absolute
-// 	bottom 0
-// 	right 0
+	padding-top 5rem
+	font-size 2rem
+.content-destino
+	padding-top 5rem
+	font-size 2rem
+	overflow hidden
 .columna-form2
 	font-family Arial
+	margin 1.5rem 0
 	input[type="checkbox"]
 		display inline-block
 		width 3rem
 		vertical-align top
 	label
-		display inline-block
 		cursor pointer
+		display inline-block
+		font-size 1.5rem
+		line-height 1.5rem
+		width 80%
 	span
 		color $Naranja
 	div.msn-place
-		color $Naranja
 		display inline-block
-		font-family Arial
-		font-size 2rem
+		padding-left  3rem
+
 .img-restelar
-	max-width 27.6rem
+	max-width 17.6rem
+	min-width 14rem
+	width 50%
+	vertical-align top
 .item-imagen
 	position relative
 .item-destino
@@ -92,23 +108,27 @@ html, body
 	float left
 	padding-bottom 2rem
 	position relative
+.item-imagen
+	margin 0 auto
+	display block
+		
 .items-destinos
 	width 100%
+	min-height 30rem
+	height 100%
 	margin-top 2rem
 	min-width 30rem
 	.titulo-item
 		padding 1rem
 		text-shadow 0 0 1.1px black
 		height 5.8rem
-		// .selecionar-hotel
-		// 	text-shadow 0 0 1px black
-		// 	color white
 .item-imagen
 	border solid 0.3rem white
 	border-radius 50%
 	height 19rem
 	overflow hidden
 	width 19rem
+	z-index 2
 	.tumb-hotel
 		left 0
 		max-height 30rem
@@ -116,6 +136,23 @@ html, body
 		object-fit cover
 		position relative
 		top 0
+.form
+	&.alertas-placas,
+	&.alertas-actualizar
+		display none
+		&.active
+			background-color $Azul
+			color white
+			display block
+			height 3rem
+			font-size 2rem
+			margin 0 auto
+			text-align center
+	&.alertas-placas
+		&.active
+			width 100%
+	&.alertas-actualizar
+		width 100%
 
 .mascara-img-manzanillo
 	bottom 0
@@ -129,17 +166,13 @@ html, body
 	bottom -90%
 .logo-estatico
 	position fixed
-.overlay-reserva
-	display none
-	&.active
+.logo-a-rodar-por-colombia.form
+	width 100%
+	#arptc
 		display block
-		background-color black
-		height 100%
-		left 0
-		opacity 0.5
-		position absolute
-		top 0
-		width 100%
+		margin 0 auto
+#arptc
+	width 80%
 .ocultar-seccion
 	display none
 .moto-bmw,
@@ -158,57 +191,45 @@ html, body
 	margin 2rem
 .moto-bmw, .moto-pie
 	z-index -2
+
 .puerta-metalica
 	&-dere,
 	&-izq
 		z-index -1
+.parrafo-descripcion-actividad, .texto-validar-placa
+	font-size 2rem
 .seccion-oculta
 	display none
 .titular
 	&-logo-estelar, &-logo-bmw
 		margin 0
+		width 100%
+	&-logo-bmw
+		float right
 .titulo-descripcion-actividad
 	border-style dotted solid dashed
 	border-top 0
 	border-left 0
 	border-right 0
 	border-bottom dotted solid dashed 0.5rem white
-	padding 3rem 0
+	margin 1rem
+	padding 1rem 0
+	font-size 4rem
+.titulo-placa
+	font-size 4rem
 .logo-bmw
 	text-align right
 .logo
 	&-estelar, 
 	&-bmw
 		float left
-		height 6rem
 		margin 0
 		padding 0
 		width 50%
-.form
-	&.alertas-placas,
-	&.alertas-actualizar
-		display none
-		&.active
-			background-color $Azul
-			color white
-			display block
-			height 3rem
-			font-size 2rem
-			margin 0 auto
-			text-align center
-	&.alertas-placas
-		&.active
-			width 50%
-	&.alertas-actualizar
-		width 100%
-// .selecionar-hotel
-// 	cursor pointer
-// 	display block
-// 	z-index 2
-// 	&.imagen
-// 		position absolute
-// 		top 0
-
+.campo-validar-placa
+	text-align  center
+	font-size 2rem
+	margin 1rem 0
 .visible
 	display block
 .vp
@@ -219,5 +240,5 @@ html, body
 	position relative
 	width 99vw
 	
-	&.formulario, &.destino
-		height 100vh
+	// &.formulario, &.destino
+	// 	height 100vh

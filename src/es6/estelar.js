@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
 						$(this).addClass('ocultar-seccion');
 						$('#'+vinculo).removeClass('seccion-oculta');
 						$('.logo-estatico').attr('class', 'logo-estatico').addClass(vinculo);
-						$('.logo-estatico.llenar-formulario').addClass('fadeOut');
+						// $('.logo-estatico.llenar-formulario').addClass('fadeOut');
 						$('.puerta-metalica-izq').addClass('animated bounceInRight');
 						$('.puerta-metalica-dere, .moto-bmw').addClass('animated bounceInLeft');
 						//$('.logo').toggleClass(vinculo);
@@ -54,6 +54,37 @@ jQuery(document).ready(function($) {
 					animatePage(vinculo);
 					
 				}
+
+				setTimeout(function () {
+						$('.items-destinos').slick({
+							slide:".item-destino",
+							infinite: true,
+							slidesToShow: 4,
+							slidesToScroll: 4,
+							arrows: true,
+							appendArrows:$(".botones"),
+							prevArrow: '<button class="prev" type="button">anterior</button>',
+							nextArrow: '<button class="next" type="button">siguiente</button>',
+							responsive: [
+								{
+									breakpoint: 768,
+									settings: {
+										slidesToShow: 3,
+										slidesToScroll: 3
+
+									}
+								},
+								{
+									breakpoint: 480,
+									settings: {
+										slidesToShow: 2,
+										slidesToScroll: 2
+
+									}
+								}
+					  		]
+						});
+				} ,500);
 			});
 			//Ubicacion de mensaje de error//
 			// const errorPlacement = (error, element)=>{
@@ -145,51 +176,10 @@ jQuery(document).ready(function($) {
 				// errorPlacement
 			});
 		/// fin validación formulario
-
-
-	$('.items-destinos').slick({
-		slide:".item-destino",
-		infinite: true,
-		slidesToShow: 4,
-		slidesToScroll: 4,
-		arrows: true,
-		appendArrows:$(".botones"),
-		prevArrow: '<button class="prev" type="button">anterior</button>',
-		nextArrow: '<button class="next" type="button">siguiente</button>',
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3
-
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 2
-
-				}
-			}
-  		]
-	});
-	$('.item-destino').hover(  function() {
-		$(this).find('.btn-reservar, .overlay-reserva').addClass('active');
-	}, function() {
-		$(this).find('.btn-reservar.active, .overlay-reserva.active').removeClass('active');
-	});
-
 	$('.btn-nav').click(function() {
 		var vinculo = $(this).attr('data-link');
 		animatePage(vinculo);
 
 	});
 
-	$('.desplegar-info').click(function() {
-		$('.from-actualizar-datos, .columna-form1, .columna-form2, .boton-actualizar-datos').addClass('active');
-		$(this).addClass('unactive')
-		/* Act on the event */
-	});
 });
