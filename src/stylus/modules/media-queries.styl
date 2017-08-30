@@ -115,9 +115,12 @@
 	// 		display block
 	// .columna-form2
 	// 	padding-top 0
+	.columna-form2
+		#arptc
+			display none
 	.cabezote-fijo
 		height 10rem
-		position relative
+		position fixed
 	.content-destino
 		font-size 2rem
 		margin-left 0		
@@ -206,14 +209,21 @@
 // 		bottom 26%
 // 		right 0
 @media (min-width: 1024px)
-	html, body
-		overflow hidden
+	// html, body
+	// 	overflow hidden
 	.desplegar-info
 		display none
 	.boton-actualizar-datos
 		display block
 	.bgimg.manzanillo
 		bottom -129%
+	.columna-form2
+		#arptc
+			display block
+			margin 0 auto
+			width 45%
+		label
+			font-size 1.1rem
 	.logo-estatico
 		display block
 		#arptc
@@ -223,14 +233,18 @@
 			left 52%
 			top 21%
 			width 40%
+			animation-duration 1s
 		&.validar-placa
 			bottom 15%
 			left 15%
 			width 18%
 		&.llenar-formulario
+			animation-duration 2s
 			left 53%
 			top 15%
 			width 40%
+			&.ocultar-logo-llenar-formulario
+				display block
 		&.elegir-hotel
 			left 6%
 			top 15%
@@ -302,6 +316,9 @@
 		max-width 30rem
 	.parrafo-descripcion-actividad
 		font-size 3rem
+@media (min-width: 1280px)
+	.columna-form2
+		bottom 52%
 @media (min-width: 1173px) and (max-width: 1370px), (min-height: 548px) and (max-height: 768px)
 	.articulo-descripcion-actividad,
 	.logo-a-rodar-por-colombia
