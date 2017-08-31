@@ -10,13 +10,13 @@ $(document).ready(function(){
         var ciudad = $("#ciudad").val();
         var destino = $("#destino").val();
         //var hotel = $(".selecionar-hotel").text();
-        alert(hotel);
+        alert();
     });
 
    $("#departamento").change(function() {
         $("#departamento option:selected").each(function() {
             departamento = $(this).val();
-            $.post("index.php", {departamento: departamento}, function(data) {
+            $.post("ciudad.php", {departamento: departamento}, function(data) {
                 $("#ciudad").html(data);
             });
             //$("#ciudad").html("<option value='ds'>sdsdsds</option>");

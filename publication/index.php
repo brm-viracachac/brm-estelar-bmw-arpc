@@ -14,15 +14,6 @@ $departamentos = new Departamentos();
 $datosDepartamentos = $departamentos->getDepartamento();
 $smarty->assign("departamento",$datosDepartamentos);
 
-if ($_POST['departamento']) {
-	$departamento = $_POST['departamento'];
-	$ciudad = new Ciudades();
-	$datosCiudad = $ciudad->getCiudadDepartamento($departamento);
-	printVar($datosCiudad);
-	$smarty->assign("ciudad",$datosCiudad);
-
-}	
-
 
 $smarty->display('index.html');
 

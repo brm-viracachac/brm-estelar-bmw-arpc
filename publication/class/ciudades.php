@@ -39,7 +39,7 @@ class Ciudades
 			$contador++;
 		}
 		$CiudadVerDBO->fetch();
-		
+		//printVar($Ciudades);
 		return($Ciudades);
 	}
 
