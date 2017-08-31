@@ -15,15 +15,15 @@ require_once("Smarty/libs/Smarty.class.php");
 require_once("db/db.linea.php");
 require_once("db/db.modelo.php");
 require_once("db/db.departamento.php");
-
 require_once("db/db.ciudad.php");
+require_once("db/db.usuario.php");
 
 require_once("class/lineas.php");
 require_once("class/modelos.php");
 require_once("class/departamentos.php");
-
 require_once("class/ciudades.php");
-require_once("ciudad.php");
+require_once("class/usuarios.php");
+require_once("usuario.php");
 
 
 $smarty = new Smarty();

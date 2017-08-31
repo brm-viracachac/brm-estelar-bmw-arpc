@@ -776,7 +776,7 @@
               </div>
               <div class="form form-linea">
                 <label for="linea">LÍNEA MOTOCICLETA:</label>
-                <select>
+                <select id="linea" name="linea">
                   		{foreach from=$linea item=lineas}
 					      <option value="{$lineas->idLinea}"> 
 					      		{$lineas->nombre}
@@ -786,7 +786,7 @@
               </div>
               <div class="form form-modelo">
                 <label for="modelo">MODELO:</label>
-                <select>
+                <select id="modelo" name="modelo">
                   		{foreach from=$modelo item=modelos}
                   			<option value="{$modelos->idModelo}">
 								{$modelos->nombre}	
@@ -794,10 +794,10 @@
                   		{/foreach}
                 </select>
               </div>
-              <div class="form form-cuidad">
+              <div class="form form-departamento">
                 <label for="departamento">DEPARTAMENTO</label>
-                <select id="departamento" name="departament">
-                		<option value="0">Seleccionar</option>
+                <select id="departamento" name="departamento">
+                		<option value="">Seleccione</option>
                   		{foreach from=$departamento item=departamentos}
                   			<option value="{$departamentos->idDepto}">
 								{$departamentos->nombre}	
@@ -808,7 +808,7 @@
               <div class="form form-cuidad">
                 <label for="ciudad">Ciudad</label>
                 <select id="ciudad" name="ciudad">
-                  <option value="0">Seleccionar</option>
+                  <option value="">Seleccione</option>
                 </select>
               </div>
             </div>
@@ -1191,7 +1191,7 @@
       <div class="row">
         <div class="content-destino">
           <label class="titulo-destino" for="destino">SELECCIONE DESTINO</label>
-          <select>
+          <select id="destino">
             <option value="1">BARRANQUILLA</option>
             <option value="2"> BOGOTÁ</option>
             <option value="3"> BUCARAMANGA</option>
