@@ -8,6 +8,7 @@
   <meta name="description" content="A rodar por Colombia">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
   <link rel="stylesheet" href="css/hoteles-estelar.min.css"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -777,7 +778,7 @@
                 <label for="linea">LÍNEA MOTOCICLETA:</label>
                 <select>
                   		{foreach from=$linea item=lineas}
-					      <option value="{$lineas->id}"> 
+					      <option value="{$lineas->idLinea}"> 
 					      		{$lineas->nombre}
 					      </option>
 					    {/foreach}
@@ -786,19 +787,33 @@
               <div class="form form-modelo">
                 <label for="modelo">MODELO:</label>
                 <select>
-                  <option>Opción 2</option>
+                  		{foreach from=$modelo item=modelos}
+                  			<option value="{$modelos->idModelo}">
+								{$modelos->nombre}	
+                  			</option>
+                  		{/foreach}
                 </select>
               </div>
               <div class="form form-cuidad">
                 <label for="departamento">DEPARTAMENTO</label>
                 <select id="departamento" name="departament">
-                  <option>DEPARTAMENTO</option>
+                		<option value="0">Seleccionar</option>
+                  		{foreach from=$departamento item=departamentos}
+                  			<option value="{$departamentos->idDepto}">
+								{$departamentos->nombre}	
+                  			</option>
+                  		{/foreach}
                 </select>
               </div>
               <div class="form form-cuidad">
                 <label for="ciudad">Ciudad</label>
                 <select id="ciudad" name="ciudad">
-                  <option>CIUDAD</option>
+                  <option value="0">Seleccionar</option>
+                  		{foreach from=$ciudad item=ciudades}
+                  			<option value="{$ciudades->idCiudad}">
+								{$ciudades->nombre}	
+                  			</option>
+                  		{/foreach}
                 </select>
               </div>
             </div>
@@ -1246,4 +1261,5 @@
   <script src="js/libs/jquery.js"></script>
   <script src="js/libs.min.js"></script>
   <script src="js/estelar.js"></script>
+  <script src="js/bmw.js"></script>
 </body></html>

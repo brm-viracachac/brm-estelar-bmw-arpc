@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.6, created on 2017-08-31 16:33:38
+<?php /* Smarty version 2.6.6, created on 2017-08-31 21:20:06
          compiled from index.html */ ?>
 <!DOCTYPE html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es-CO"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es-CO"> <![endif]-->
@@ -10,6 +10,7 @@
   <meta name="description" content="A rodar por Colombia">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
   <link rel="stylesheet" href="css/hoteles-estelar.min.css"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -781,7 +782,7 @@
                   		<?php if (count($_from = (array)$this->_tpl_vars['linea'])):
     foreach ($_from as $this->_tpl_vars['lineas']):
 ?>
-					      <option value="<?php echo $this->_tpl_vars['lineas']->id; ?>
+					      <option value="<?php echo $this->_tpl_vars['lineas']->idLinea; ?>
 "> 
 					      		<?php echo $this->_tpl_vars['lineas']->nombre; ?>
 
@@ -792,19 +793,45 @@
               <div class="form form-modelo">
                 <label for="modelo">MODELO:</label>
                 <select>
-                  <option>Opción 2</option>
+                  		<?php if (count($_from = (array)$this->_tpl_vars['modelo'])):
+    foreach ($_from as $this->_tpl_vars['modelos']):
+?>
+                  			<option value="<?php echo $this->_tpl_vars['modelos']->idModelo; ?>
+">
+								<?php echo $this->_tpl_vars['modelos']->nombre; ?>
+	
+                  			</option>
+                  		<?php endforeach; unset($_from); endif; ?>
                 </select>
               </div>
               <div class="form form-cuidad">
                 <label for="departamento">DEPARTAMENTO</label>
                 <select id="departamento" name="departament">
-                  <option>DEPARTAMENTO</option>
+                		<option value="0">Seleccionar</option>
+                  		<?php if (count($_from = (array)$this->_tpl_vars['departamento'])):
+    foreach ($_from as $this->_tpl_vars['departamentos']):
+?>
+                  			<option value="<?php echo $this->_tpl_vars['departamentos']->idDepto; ?>
+">
+								<?php echo $this->_tpl_vars['departamentos']->nombre; ?>
+	
+                  			</option>
+                  		<?php endforeach; unset($_from); endif; ?>
                 </select>
               </div>
               <div class="form form-cuidad">
                 <label for="ciudad">Ciudad</label>
                 <select id="ciudad" name="ciudad">
-                  <option>CIUDAD</option>
+                  <option value="0">Seleccionar</option>
+                  		<?php if (count($_from = (array)$this->_tpl_vars['ciudad'])):
+    foreach ($_from as $this->_tpl_vars['ciudades']):
+?>
+                  			<option value="<?php echo $this->_tpl_vars['ciudades']->idCiudad; ?>
+">
+								<?php echo $this->_tpl_vars['ciudades']->nombre; ?>
+	
+                  			</option>
+                  		<?php endforeach; unset($_from); endif; ?>
                 </select>
               </div>
             </div>
@@ -1252,4 +1279,5 @@
   <script src="js/libs/jquery.js"></script>
   <script src="js/libs.min.js"></script>
   <script src="js/estelar.js"></script>
+  <script src="js/bmw.js"></script>
 </body></html>

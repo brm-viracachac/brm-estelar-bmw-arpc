@@ -31,7 +31,7 @@ class Lineas
 		$contador = 0;
 
 		while($lineaVerDBO->fetch()){
-			$lineas[$contador]->id = $lineaVerDBO->id;
+			$lineas[$contador]->idLinea = $lineaVerDBO->idLinea;
 			$lineas[$contador]->nombre = $lineaVerDBO->nombre;
 			$contador++;
 		}
