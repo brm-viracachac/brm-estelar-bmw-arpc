@@ -3,28 +3,19 @@ global $prefijo;
 
 error_reporting(0);
 
-function printVar( $variable, $title = "" ){
-$var = print_r( $variable, true );
-echo "<pre style='background-color:#dddd00; border: dashed thin #000000;'><strong>[$title]</strong> $var</pre>";
-}
+require_once("./".$prefijo."db/DBO.php");
+require_once("./".$prefijo."Smarty/libs/Smarty.class.php");
+require_once("./".$prefijo."db/db.linea.php");
+require_once("./".$prefijo."db/db.modelo.php");
+require_once("./".$prefijo."db/db.departamento.php");
+require_once("./".$prefijo."db/db.ciudad.php");
+require_once("./".$prefijo."db/db.usuario.php");
 
-
-require_once("db/DBO.php");
-//require_once("db/conexion.php");
-require_once("Smarty/libs/Smarty.class.php");
-require_once("db/db.linea.php");
-require_once("db/db.modelo.php");
-require_once("db/db.departamento.php");
-require_once("db/db.ciudad.php");
-require_once("db/db.usuario.php");
-
-require_once("class/lineas.php");
-require_once("class/modelos.php");
-require_once("class/departamentos.php");
-require_once("class/ciudades.php");
-require_once("class/usuarios.php");
-require_once("usuario.php");
-
+require_once("./".$prefijo."class/lineas.php");
+require_once("./".$prefijo."class/modelos.php");
+require_once("./".$prefijo."class/departamentos.php");
+require_once("./".$prefijo."class/ciudades.php");
+require_once("./".$prefijo."class/usuarios.php");
 
 $smarty = new Smarty();
 

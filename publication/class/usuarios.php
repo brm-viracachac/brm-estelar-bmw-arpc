@@ -12,7 +12,7 @@ class Usuarios
 		$usuarioDBO->idModelo = $this->idModelo;
 		$usuarioDBO->idDepto = $this->idDepto;
 		$usuarioDBO->idCiudad = $this->idCiudad;
-		$usuarioDBO->destino = utf8_decode($this->destino);
+		$usuarioDBO->destino = strtoupper(utf8_decode($this->destino));
 		$usuarioDBO->hotel = utf8_decode($this->hotel);
 		$usuarioDBO->placa = strtoupper($this->placa);
 

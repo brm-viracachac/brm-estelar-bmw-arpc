@@ -8,7 +8,6 @@
   <meta name="description" content="A rodar por Colombia">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
   <link rel="stylesheet" href="css/hoteles-estelar.min.css"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -732,7 +731,7 @@
 </svg>
 
         </div>
-        <button class="btn-nav continuar-actividad external animated pulse infinite" data-link="validar-placa" type="button">CONTINUAR</button>
+        <button class="btn-nav continuar-actividad external animated pulse infinite" data-vinculo="validar-placa" type="button">CONTINUAR</button>
       </div>
     </div>
   </section>
@@ -747,7 +746,7 @@
           <div class="form form-placa">
             <label class="titulo-placa" for="placa">PLACA</label>
             <input class="campo-validar-placa" id="placa" name="placa" type="text" minlength="5" maxlength="6" placeholder="aaa23a">
-            <button class="boton-validar-placa animated pulse infinite" type="button" data-link="llenar-formulario">CONTINUAR</button>
+            <button class="boton-validar-placa animated pulse infinite" type="button" data-vinculo="llenar-formulario">CONTINUAR</button>
           </div>
         </form>
       </div>
@@ -764,17 +763,17 @@
               </div>
               <div class="form form-nombre">
                 <label for="nombre">NOMBRE DEL PROPIETARIO:</label>
-                <input id="nombre" name="nombre" type="text" placeholder="CAMILO VIRACACHA">
+                <input id="nombre" name="nombre" type="text" placeholder="NOMBRE APELLIDO">
               </div>
               <div class="form form-cedula">
                 <label for="cedula">CÉDULA:</label>
-                <input id="cedula" name="cedula" type="number" placeholder="10236565">
+                <input id="cedula" name="cedula" type="number" placeholder="1111111">
               </div>
               <div class="form form-email">
                 <label for="email">EMAIL:</label>
                 <input id="email" name="email" type="email" placeholder="usuario@correo.com">
               </div>
-              <div class="form form-linea">
+               <div class="form form-linea">
                 <label for="linea">LÍNEA MOTOCICLETA:</label>
                 <select id="linea" name="linea">
                   		{foreach from=$linea item=lineas}
@@ -1177,7 +1176,7 @@
             </div>
           </div>
           <div class="row">
-            <button class="boton-actualizar-datos animated pulse infinite" type="button" data-link="elegir-hotel">Actualizar Datos</button>
+            <button class="boton-actualizar-datos animated pulse infinite" type="button" data-vinculo="elegir-hotel">Actualizar Datos</button>
           </div>
         </form>
         <div class="informacion-manzanillo"></div>
@@ -1190,57 +1189,228 @@
     <div class="container content-elegir-destino">
       <div class="row">
         <div class="content-destino">
-          <label class="titulo-destino" for="destino">SELECCIONE DESTINO</label>
-          <select id="destino">
-            <option value="1">BARRANQUILLA</option>
-            <option value="2"> BOGOTÁ</option>
-            <option value="3"> BUCARAMANGA</option>
-            <option value="4"> CALI</option>
-            <option value="5"> CARTAGENA</option>
-            <option value="5"> IBAGUÉ</option>
-            <option value="6"> MANIZALES</option>
-            <option value="7"> MEDELLÍN</option>
-            <option value="8"> PAIPA</option>
-            <option value="9">SANTAMARTA</option>
-            <option value="10"> VILLAVICENCIO</option>
-            <option value="11"> YOPAL</option>
+          <label class="titulo-destino" for="destino" onchange="rescribir-hoteles(this,document.getElementByClassName(items-destinos))">SELECCIONE DESTINO</label>
+          <select id="selecccionarciudad">
+            <option value="">CIUDAD</option>
+            <option value="barranquilla">BARRANQUILLA</option>
+            <option value="BOGOTÁ"> BOGOTÁ</option>
+            <option value="bucaramanga"> BUCARAMANGA</option>
+            <option value="cali"> CALI</option>
+            <option value="cartagena"> CARTAGENA</option>
+            <option value="ibague"> IBAGUÉ</option>
+            <option value="manizales"> MANIZALES</option>
+            <option value="medellin"> MEDELLÍN</option>
+            <option value="paipa"> PAIPA</option>
+            <option value="santamarta">SANTAMARTA</option>
+            <option value="villavicencio"> VILLAVICENCIO</option>
+            <option value="yopal"> YOPAL</option>
           </select>
           <div class="items-destinos">
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR Windsor house</a></h4>
+            <div class="destinos-slider" id="BOGOTÁ">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="politica-de-datos.html" target="_blank" data-hotel="HOTEL ESTELAR LA FONTANA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-fontana.jpg" title="HOTEL ESTELAR LA FONTANA" alt="HOTEL ESTELAR LA FONTANA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">HOTEL ESTELAR LA FONTANA</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR PARQUE DE LA 93">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-93.jpg" title="HOTEL ESTELAR PARQUE DE LA 93" alt="HOTEL ESTELAR PARQUE DE LA 93"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">HOTEL ESTELAR PARQUE DE LA 93</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR SUITES JONES">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-suites-jones.jpg" title="HOTEL ESTELAR SUITES JONES" alt="HOTEL ESTELAR SUITES JONES"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank" >HOTEL ESTELAR SUITES JONES</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR WINDSOR HOUSE">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-windsor.jpg" title="HOTEL ESTELAR WINDSOR HOUSE" alt="HOTEL ESTELAR WINDSOR HOUSE"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">HOTEL ESTELAR WINDSOR HOUSE</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR DE LA FERIA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-feria.jpg" title="HOTEL ESTELAR DE LA FERIA" alt="HOTEL ESTELAR DE LA FERIA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">HOTEL ESTELAR DE LA FERIA</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR CALLE 100">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-100.jpg" title="HOTEL ESTELAR CALLE 100" alt="HOTEL ESTELAR CALLE 100"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">HOTEL ESTELAR CALLE 100</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="ESTELAR APARTAMENTOS BOGOTA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/apartamentos-bogota.jpg" title="ESTELAR APARTAMENTOS BOGOTA" alt="ESTELAR APARTAMENTOS BOGOTA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">ESTELAR APARTAMENTOS BOGOTA</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="ESTELAR APARTAMENTOS AEROPUERTO">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/apartamentos-aeropuerto.jpg" title="ESTELAR APARTAMENTOS AEROPUERTO" alt="ESTELAR APARTAMENTOS AEROPUERTO"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">ESTELAR APARTAMENTOS AEROPUERTO</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR suites jones</a></h4>
+            <div class="destinos-slider" id="medellin">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR MILLA DE ORO">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/medellin-hotel-estelar-milla-de-oro.jpg" title="HOTEL ESTELAR MILLA DE ORO" alt="HOTEL ESTELAR MILLA DE ORO"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR MILLA DE ORO</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR BLUE">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/medellin-hotel-estelar-blue.jpg" title="HOTEL ESTELAR BLUE" alt="HOTEL ESTELAR BLUE"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR BLUE</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR APARTAMENTOS MEDELLIN">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/medellin-estelar-apartamentos-medellin.jpg" title="ESTELAR APARTAMENTOS MEDELLIN" alt="ESTELAR APARTAMENTOS MEDELLIN"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR APARTAMENTOS MEDELLIN</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR parque de la 93</a></h4>
+            <div class="destinos-slider" id="barranquilla">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR EN ALTO PRADO">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-alto-prado.jpg" title="HOTEL ESTELAR EN ALTO PRADO" alt="HOTEL ESTELAR EN ALTO PRADO"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR EN ALTO PRADO</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR APARTAMENTOS BARRANQUILLA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-apartamentos-barraquilla.jpg" title="ESTELAR APARTAMENTOS BARRANQUILLA" alt="ESTELAR APARTAMENTOS BARRANQUILLA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR APARTAMENTOS BARRANQUILLA</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR calle 100</a></h4>
+            <div class="destinos-slider" id="bucaramanga">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR APARTAMENTOS BUCARAMANGA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-apartamentos-bucaramanga.jpg" title="ESTELAR APARTAMENTOS BUCARAMANGA" alt="ESTELAR APARTAMENTOS BUCARAMANGA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR APARTAMENTOS BUCARAMANGA</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR calle 100</a></h4>
+            <div class="destinos-slider" id="cali">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="INTERCONTINENTAL CALI">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/intercontinental-cali.jpg" title="INTERCONTINENTAL CALI" alt="INTERCONTINENTAL CALI"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">INTERCONTINENTAL CALI</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR calle 100</a></h4>
+            <div class="destinos-slider" id="cartagena">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR GRAND PLAYA MANZANILLO BY OCCIDENTAL HOTELS &amp; RESORTS">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg" title="ESTELAR GRAND PLAYA MANZANILLO BY OCCIDENTAL HOTELS &amp; RESORTS" alt="ESTELAR GRAND PLAYA MANZANILLO BY OCCIDENTAL HOTELS &amp; RESORTS"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR GRAND PLAYA MANZANILLO BY OCCIDENTAL HOTELS &amp; RESORTS</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR CARTAGENA DE INDIAS HOTEL Y CENTRO DE CONVENCIONES">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/intercontinental-cartagena.jpg" title="ESTELAR CARTAGENA DE INDIAS HOTEL Y CENTRO DE CONVENCIONES" alt="ESTELAR CARTAGENA DE INDIAS HOTEL Y CENTRO DE CONVENCIONES"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR CARTAGENA DE INDIAS HOTEL Y CENTRO DE CONVENCIONES</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR OCEANIA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-oceania.jpg" title="HOTEL ESTELAR OCEANIA" alt="HOTEL ESTELAR OCEANIA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR OCEANIA</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR calle 100</a></h4>
+            <div class="destinos-slider" id="ibague">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR ALTAMIRA">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg" title="HOTEL ESTELAR ALTAMIRA" alt="HOTEL ESTELAR ALTAMIRA"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR ALTAMIRA</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR calle 100</a></h4>
+            <div class="destinos-slider" id="manizales">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR LAS COLINAS">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-las-colinas.jpg" title="HOTEL ESTELAR LAS COLINAS" alt="HOTEL ESTELAR LAS COLINAS"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR LAS COLINAS</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR RECINTO DEL PENSAMIENTO HOTEL Y CENTRO  DE CONVENCIONES">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-recinto-del-pensamiento-hotel-y-centro-de-convenciones.jpg" title="ESTELAR RECINTO DEL PENSAMIENTO HOTEL Y CENTRO  DE CONVENCIONES" alt="ESTELAR RECINTO DEL PENSAMIENTO HOTEL Y CENTRO  DE CONVENCIONES"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR RECINTO DEL PENSAMIENTO HOTEL Y CENTRO  DE CONVENCIONES</a></h4>
+              </div>
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR EL CABLE">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-el-cable.jpg" title="HOTEL ESTELAR EL CABLE" alt="HOTEL ESTELAR EL CABLE"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR EL CABLE</a></h4>
+              </div>
             </div>
-            <div class="item-destino bounceInUp">
-              <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank">RESERVAR</a><img class="tumb-hotel" src="images/hotel-estelar.png" alt="aa" title="aa"></div>
-              <h4 class="titulo-item"><a class="selecionar-hotel" href="#" target="_blank">Hotel ESTELAR calle 100</a></h4>
+            <div class="destinos-slider" id="paipa">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR PAIPA HOTEL Y CENTRO DE CONVENCIONES">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-paipa-hotel-y-centro-de-convenciones.jpg" title="ESTELAR PAIPA HOTEL Y CENTRO DE CONVENCIONES" alt="ESTELAR PAIPA HOTEL Y CENTRO DE CONVENCIONES"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR PAIPA HOTEL Y CENTRO DE CONVENCIONES</a></h4>
+              </div>
+            </div>
+            <div class="destinos-slider" id="santamarta">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR SANTAMAR HOTEL &amp; CENTRO DE CONVENCIONES">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-santamar-hotel-y-centro-de-convenciones.jpg" title="ESTELAR SANTAMAR HOTEL &amp; CENTRO DE CONVENCIONES" alt="ESTELAR SANTAMAR HOTEL &amp; CENTRO DE CONVENCIONES"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR SANTAMAR HOTEL &amp; CENTRO DE CONVENCIONES</a></h4>
+              </div>
+            </div>
+            <div class="destinos-slider" id="villavicencio">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR VILLAVICENCIO HOTEL Y CENTRO DE CONVENCIONES">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/estelar-villavicencio-y-centro-de-convenciones.jpg" title="ESTELAR VILLAVICENCIO HOTEL Y CENTRO DE CONVENCIONES" alt="ESTELAR VILLAVICENCIO HOTEL Y CENTRO DE CONVENCIONES"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">ESTELAR VILLAVICENCIO HOTEL Y CENTRO DE CONVENCIONES</a></h4>
+              </div>
+            </div>
+            <div class="destinos-slider" id="yopal">
+              <div class="item-destino">
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="HOTEL ESTELAR YOPAL">RESERVAR</a>
+                  <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-yopal.jpg" title="HOTEL ESTELAR YOPAL" alt="HOTEL ESTELAR YOPAL"/>
+                  <!--/-img hotel-->
+                </div>
+                <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR YOPAL</a></h4>
+              </div>
             </div>
             <div class="botones"></div>
           </div>

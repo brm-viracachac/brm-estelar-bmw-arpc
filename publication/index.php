@@ -14,7 +14,6 @@ $departamentos = new Departamentos();
 $datosDepartamentos = $departamentos->getDepartamento();
 $smarty->assign("departamento",$datosDepartamentos);
 
-
 $smarty->display('index.html');
 
 

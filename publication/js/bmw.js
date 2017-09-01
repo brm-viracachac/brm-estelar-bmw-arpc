@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    
+
    $(".btn-reservar").click(function(){
         var placa = $("#placa").val();
         var nombre = $("#nombre").val();
@@ -9,13 +11,12 @@ $(document).ready(function(){
         var modelo = $("#modelo").val();
         var departamento = $("#departamento").val();
         var ciudad = $("#ciudad").val();
-        var destino = $("#destino").val();
-        //var hotel = $(".selecionar-hotel").text();
-        var hotel = "Hotel Calle 100";
-        alert();
+        var destino = $("#selecccionarciudad").val();
+        var hotel = $(this).data("hotel");
+        //var hotel = "Hotel Calle 100";
         $.post("usuario.php", {placa: placa, nombre: nombre, cedula: cedula, email: email,linea: linea,modelo: modelo, departamento: departamento,
                             ciudad: ciudad, destino: destino, hotel: hotel, accion: "insertar_usuario" }, function(data) {
-                $("#ciudad").html(data);
+                location.reload();
             });
     });
 

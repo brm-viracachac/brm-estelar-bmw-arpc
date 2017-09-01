@@ -22,8 +22,8 @@ if($accion == 'insertar_usuario'){
 
 	$usuario->insertar();
 
-	echo "<script>alert('Datos insertados correctamente.');
-		</script>";
+	// echo "<script>alert('Datos insertados correctamente.');
+	//	</script>";
 
 	
 }else if ($accion == 'cargar_ciudad') { 

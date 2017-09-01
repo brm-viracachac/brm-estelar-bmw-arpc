@@ -123,7 +123,7 @@ block content
 						//- div.row-destino
 						//- Cilco each para llamar los hoteles ,  imagnenes y vinculos
 						div#bogota.destinos-slider
-							-var hotelesbogota =[{"hotel":"HOTEL ESTELAR LA FONTANA","image":"hotel-estelar-fontana.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR PARQUE DE LA 93","image":"hotel-estelar-93.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR SUITES JONES","image":"hotel-estelar-suites-jones.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR WINDSOR HOUSE","image":"hotel-estelar-windsor.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR CALLE 100","image":"hotel-estelar-100.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS BOGOTA","image":"apartamentos-bogota.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS AEROPUERTO","image":"apartamentos-aeropuerto.jpg","linkh":"#"}]				
+							-var hotelesbogota =[{"hotel":"HOTEL ESTELAR LA FONTANA","image":"hotel-estelar-fontana.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR PARQUE DE LA 93","image":"hotel-estelar-93.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR SUITES JONES","image":"hotel-estelar-suites-jones.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR WINDSOR HOUSE","image":"hotel-estelar-windsor.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR CALLE 100","image":"hotel-estelar-100.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS BOGOTA","image":"apartamentos-bogota.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS AEROPUERTO","image":"apartamentos-aeropuerto.jpg","linkh":"#"},{hotel:"HOTEL ESTELAR DE LA FERIA",image:"hotel-estelar-feria.jpg",vinculo:"#"}]				
 							each item, contador in hotelesbogota
 								div.item-destino
 									div.item-imagen
@@ -207,7 +207,7 @@ block content
 									h4.titulo-item
 										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
 						div#manizales.destinos-slider
-							-var hotelesmanizales=[{hotel:"HOTEL ESTELAR ALTAMIRA",image:"estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg",vinculo:"#"}];
+							-var hotelesmanizales=[{hotel:"HOTEL ESTELAR LAS COLINAS",image:"hotel-estelar-las-colinas.jpg",vinculo:"#"},{hotel:"ESTELAR RECINTO DEL PENSAMIENTO HOTEL Y CENTRO  DE CONVENCIONES",image:"estelar-recinto-del-pensamiento-hotel-y-centro-de-convenciones.jpg",vinculo:"#"},{hotel:"HOTEL ESTELAR EL CABLE",image:"hotel-estelar-el-cable.jpg",vinculo:"#"}];
 							each item, contador in hotelesmanizales
 								div.item-destino
 									div.item-imagen
@@ -219,7 +219,7 @@ block content
 									h4.titulo-item
 										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
 						div#paipa.destinos-slider
-							-var hotelespaipa=[{hotel:"HOTEL ESTELAR ALTAMIRA",image:"estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg",vinculo:"#"}];
+							-var hotelespaipa=[{hotel:"ESTELAR PAIPA HOTEL Y CENTRO DE CONVENCIONES",image:"estelar-paipa-hotel-y-centro-de-convenciones.jpg",vinculo:"#"}];
 							each item, contador in hotelespaipa
 								div.item-destino
 									div.item-imagen
