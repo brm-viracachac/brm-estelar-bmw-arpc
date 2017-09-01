@@ -1,12 +1,12 @@
 *
 	&:focus
 		outline 0
-// html, body
+ html, body
 // 	min-height 60.8rem
 // 	// height 68rem
 // 	// height 100vh
 // 	overflow auto
-// 	overflow-x hidden
+	overflow-x hidden
 div.msn-place
 	font-family Arial
 	font-size 1.5rem
@@ -48,8 +48,8 @@ div.msn-place
 .boton-actualizar-datos,
 .continuar-actividad 
 	width 100%
-.content-logos
-	height 6rem
+// .content-logos
+// 	height 6rem
 .cabezote-fijo
 	border 0 
 	height 6rem
@@ -94,7 +94,28 @@ div.msn-place
 	div.msn-place
 		display inline-block
 		padding-left  3rem
-
+.destinos-slider
+	// display none
+	height 100%
+	max-height 0
+	opacity 0
+	overflow hidden
+	transitionBase()
+	
+		
+	
+	&.active
+		max-height 46rem
+		opacity 0.99
+		
+		.item-destino
+			for x in 1..9
+				&:nth-of-type({x})
+					opacity 0.99
+					transform translateY(0)
+					transition-delay (0.3s*x)
+		
+	
 .img-restelar
 	max-width 17.6rem
 	min-width 14rem
@@ -109,8 +130,14 @@ div.msn-place
 	border-style dotted solid dashed
 	border-top 0
 	float left
+	opacity 0
 	padding-bottom 2rem
+	padding-top 1.5rem
 	position relative
+	transform translateY(-1%)
+	transitionBase()
+	width 25%
+	
 .item-imagen
 	margin 0 auto
 	display block
@@ -138,6 +165,7 @@ div.msn-place
 		max-width 30rem
 		object-fit cover
 		position relative
+		transform translate(-50%)
 		top 0
 .form
 	&.alertas-placas,
@@ -233,6 +261,8 @@ div.msn-place
 	text-align  center
 	font-size 2rem
 	margin 1rem 0
+.selecionar-hotel
+	transitionBase()
 .visible
 	display block
 .vp
@@ -242,10 +272,23 @@ div.msn-place
 	// height 76rem
 	overflow hidden
 	padding 0
+	padding-top 6rem
 	padding-bottom 36%
 	position relative
 	width 100%
 	width 99vw
+	overflow-y hidden
+	&.validar-placa
+		padding-bottom 19%
+	&.destino
+		padding-bottom 20%
+	&.llenar-formulario
+		padding-bottom 28%
+.formulario
+	padding-top 6rem
+	overflow hidden
+	padding-bottom 3rem
+	
 	
 	// &.formulario, &.destino
 	// 	height 100vh

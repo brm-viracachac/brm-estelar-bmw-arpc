@@ -19,7 +19,10 @@ jQuery(document).ready(function($) {
 			/// muestra si la placa y el formulario fue enviado
 			var mensajePlaca = ['Tu placa no fue recibida', 'Tu placa fue recibida exitosamente']
 			var mensajeDatos = ['Tus datos no fueron actualizados', 'Tus datos fueron actualizados']
-			function animatePage(vinculo){
+			const animatePage = (vinculo) =>{
+
+					console.log('entre a la funcion')
+					console.log(vinculo)
 					//var ruta = "http://localhost:3000/index.html#";
 					//$formPlaca.submit();
 					/// ocultar las pantallas
@@ -34,13 +37,13 @@ jQuery(document).ready(function($) {
 						location.href = ruta + vinculo;
 					});
 					/// cierra ocultar las pantallas
-			}
+			};
 			/// Botones validar y actualizar
 			$('.boton-validar-placa').click(function() {
 				$('.form.alertas-placas').addClass('active');
 				$('.form.alertas-placas p span').html(mensajePlaca[0]);
 				if($formPlaca.valid()){
-					var vinculo = $(this).attr('data-link');
+					var vinculo = $(this).attr('data-vinculo');
 					animatePage(vinculo);
 					/// cierra ocultar las pantallas
 				}
@@ -50,41 +53,10 @@ jQuery(document).ready(function($) {
 				$('.form.alertas-actualizar').addClass('active');
 				$('.form.alertas-actualizar p span').html(mensajeDatos[0])
 				if($formDatos.valid()){
-					var vinculo = $(this).attr('data-link');
+					var vinculo = $(this).attr('data-vinculo');
 					animatePage(vinculo);
 					
 				}
-
-				setTimeout(function () {
-						$('.items-destinos').slick({
-							slide:".item-destino",
-							infinite: true,
-							slidesToShow: 4,
-							slidesToScroll: 4,
-							arrows: true,
-							appendArrows:$(".botones"),
-							prevArrow: '<button class="prev" type="button">anterior</button>',
-							nextArrow: '<button class="next" type="button">siguiente</button>',
-							responsive: [
-								{
-									breakpoint: 768,
-									settings: {
-										slidesToShow: 3,
-										slidesToScroll: 3
-
-									}
-								},
-								{
-									breakpoint: 480,
-									settings: {
-										slidesToShow: 2,
-										slidesToScroll: 2
-
-									}
-								}
-					  		]
-						});
-				} ,500);
 			});
 			//Ubicacion de mensaje de error//
 			// const errorPlacement = (error, element)=>{
@@ -98,6 +70,13 @@ jQuery(document).ready(function($) {
 				return this.optional(el) || /^([A-Z])([A-Z])([A-Z])([0-9])([0-9])([A-Z])$/i.test(val);
 			});
 
+			const errorPlacement = function (a, b) {
+					if (b.attr("type") == 'checkbox') {
+						a.insertAfter(b.next('label'));
+					} else {
+						a.insertAfter(b);
+					}
+			};
 			/// validacion de placa
 			$formPlaca.validate({
 				errorElement: 'div',
@@ -133,7 +112,7 @@ jQuery(document).ready(function($) {
 			messages: {
 				nombre: {
 					required:'Indica tu nombre',
-					letras:'Solo letras'
+					letras:'Solo texto'
 				  },
 				cedula:{
 					required:'Indica tu n&uacute;mero de c&eacute;dula',
@@ -142,7 +121,7 @@ jQuery(document).ready(function($) {
 				  },
 				email:{
 					required:'Indica tu correo',
-					email:'Ingresa un c&oacute;digo v&aacute;lido'
+					email:'Ingresa un correo v&iacute;lido'
 				  },
 				linea: {
 					required:'Elige una l&iacute;nea'
@@ -166,20 +145,36 @@ jQuery(document).ready(function($) {
 				  	required:'Declara que haz le&iacute;do la p&oacute;litica de tratamiento de datos'
 				  }
 				},
-				errorPlacement : function (a, b) {
-					if (b.attr("type") == 'checkbox') {
-						a.insertAfter(b.next('label'));
-					} else {
-						a.insertAfter(b);
-					}
-				}
+				errorPlacement
 				// errorPlacement
 			});
 		/// fin validación formulario
 	$('.btn-nav').click(function() {
-		var vinculo = $(this).attr('data-link');
+		let vinculo = $(this).attr('data-vinculo');
+
+		console.log(`hola vinculo ${vinculo}`)
+		
 		animatePage(vinculo);
 
 	});
+	//// CaMBIAR LOS HOTELES
+$("#selecccionarciudad").change(function () {
+	// var str = "";
+	// $("#selecccionarCiudad option:selected").each(function() {
+	// str += $( this ).val();
+	// console.log('si cambio a' + str )
+	let destino = $(this).val();
+
+	$('.destinos-slider').removeClass('active');
+	if(destino != ""){
+		$('#'+destino).addClass('active');
+	}else{
+		$('.destinos-slider').removeClass('active');
+	}
+	
+
+	});
+	// $( "div"+"#" ).text( str );
+// .change();
 
 });

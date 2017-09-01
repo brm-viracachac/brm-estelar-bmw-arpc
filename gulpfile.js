@@ -60,7 +60,6 @@ const banner = ['/**',
 //arreglo concatenar JS en el orden en el que se cargan
 const jsLibs = [
   routes.app + routes.js +'libs/jquery.validate.js',
-  routes.app + routes.js +'libs/slick.min.js',
   routes.app + routes.js +'libs/bootstrap.min.js',
 ];
 

@@ -23,7 +23,7 @@ block content
 					p.parrafo-descripcion-actividad.animated.bounceIn  Aprovecha un 20% de descuento <br/> en nuestros hoteles
 				div.logo-a-rodar-por-colombia.inicio
 					include ../templates/includes/a-rodar-por-toda-colombia-01.svg
-				button.btn-nav.continuar-actividad.external.animated.pulse.infinite(data-link="validar-placa" type="button") CONTINUAR
+				button.btn-nav.continuar-actividad.external.animated.pulse.infinite(data-vinculo="validar-placa" type="button") CONTINUAR
 	//- seccion de validacion de placas
 	section#validar-placa.vp.llenar-formulario.seccion-oculta
 		div.container.content-validar-placa
@@ -37,7 +37,7 @@ block content
 					div.form.form-placa
 						label(for='placa', class="titulo-placa") PLACA
 						input(id="placa", class="campo-validar-placa" name="placa", type="text" minlength="5", maxlength="6", placeholder="aaa23a")
-						button.boton-validar-placa.animated.pulse.infinite(type="button", data-link="llenar-formulario") CONTINUAR
+						button.boton-validar-placa.animated.pulse.infinite(type="button", data-vinculo="llenar-formulario") CONTINUAR
 				//-  cierra formulario de placa
 		+image("puerta-izq.png", 'puerta-bmw')(class="bgimg puerta-metalica-izq")
 		+image("puerta-dere.png", 'puerta-bmw')(class="bgimg puerta-metalica-dere")
@@ -56,10 +56,10 @@ block content
 									span.mensaje-alerta
 							div.form.form-nombre
 								label(for="nombre") NOMBRE DEL PROPIETARIO:
-								input(id="nombre", name="nombre", type="text", placeholder="CAMILO VIRACACHA")
+								input(id="nombre", name="nombre", type="text", placeholder="NOMBRE APELLIDO")
 							div.form.form-cedula
 								label(for="cedula") CÉDULA:
-								input(id="cedula", name="cedula", type="number", placeholder="10236565")
+								input(id="cedula", name="cedula", type="number", placeholder="#######")
 							div.form.form-email
 								label(for="email") EMAIL:
 								input(id="email", name="email", type="email", placeholder="usuario@correo.com")
@@ -92,59 +92,183 @@ block content
 								input(type="checkbox", id="declaro", name="declaro")
 								label(for="declaro") Declaro que he leído y acepto <span><a class="ancla-terminos" href="politica-de-datos.html" target="_blank">la política de tratamiento de datos personales</a></span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.
 					div.row
-						button.boton-actualizar-datos.animated.pulse.infinite(type="button", data-link="elegir-hotel") Actualizar Datos
+						button.boton-actualizar-datos.animated.pulse.infinite(type="button", data-vinculo="elegir-hotel") Actualizar Datos
 					//- cierra formulario de de datos
 				div.informacion-manzanillo
 		div.mascara-img-manzanillo
 			+image("manzanillo.png", 'manzanillo')(class="bgimg manzanillo")
 	//- seccion de  seleccionar destino
+	//- section#elegir-hotel.vp.destino.seccion-oculta
 	section#elegir-hotel.vp.destino.seccion-oculta
 		div.container.content-elegir-destino
 			div.row
 				div.content-destino
-					label(for="destino" class="titulo-destino") SELECCIONE DESTINO
-					select
-						option(value="1") BARRANQUILLA
-						option(value="2")  BOGOTÁ
-						option(value="3")  BUCARAMANGA
-						option(value="4")  CALI
-						option(value="5")  CARTAGENA
-						option(value="5")  IBAGUÉ
-						option(value="6")  MANIZALES
-						option(value="7")  MEDELLÍN
-						option(value="8")  PAIPA
-						option(value="9") SANTAMARTA
-						option(value="10")  VILLAVICENCIO
-						option(value="11")  YOPAL
+					label(for="destino" class="titulo-destino" onchange="rescribir-hoteles(this,document.getElementByClassName(items-destinos))") SELECCIONE DESTINO
+					select#selecccionarciudad
+						option(value="") CIUDAD
+						option(value="barranquilla") BARRANQUILLA
+						option(value="bogota")  BOGOTÁ
+						option(value="bucaramanga")  BUCARAMANGA
+						option(value="cali")  CALI
+						option(value="cartagena")  CARTAGENA
+						option(value="ibague")  IBAGUÉ
+						option(value="manizales")  MANIZALES
+						option(value="medellin")  MEDELLÍN
+						option(value="paipa")  PAIPA
+						option(value="santamarta") SANTAMARTA
+						option(value="villavicencio")  VILLAVICENCIO
+						option(value="yopal")  YOPAL
 					
 					div.items-destinos
 						//- div.row-destino
 						//- Cilco each para llamar los hoteles ,  imagnenes y vinculos
-						-list = ['Hotel ESTELAR Windsor house', 'Hotel ESTELAR suites jones', 'Hotel ESTELAR parque de la 93', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100']
-						-img = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-						-link = ['#', '#', '#', '#']
-						each item, contador in list
-							div.item-destino.bounceInUp
-								div.item-imagen
-									a.selecionar-hotel.btn-reservar(href="#", target="_blank") RESERVAR
-									//- div.overlay-reserva
-									img.tumb-hotel(src='images/hotel-estelar.png' alt="aa" title="aa")
-								h4.titulo-item: a.selecionar-hotel(href="#", target="_blank") #{item}
+						div#bogota.destinos-slider
+							-var hotelesbogota =[{"hotel":"HOTEL ESTELAR LA FONTANA","image":"hotel-estelar-fontana.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR PARQUE DE LA 93","image":"hotel-estelar-93.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR SUITES JONES","image":"hotel-estelar-suites-jones.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR WINDSOR HOUSE","image":"hotel-estelar-windsor.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR CALLE 100","image":"hotel-estelar-100.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS BOGOTA","image":"apartamentos-bogota.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS AEROPUERTO","image":"apartamentos-aeropuerto.jpg","linkh":"#"}]				
+							each item, contador in hotelesbogota
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#medellin.destinos-slider
+							-var hotelesmedellin =[{hotel:"HOTEL ESTELAR MILLA DE ORO",image:"medellin-hotel-estelar-milla-de-oro.jpg",vinculo:"#"},{hotel:"HOTEL ESTELAR BLUE",image:"medellin-hotel-estelar-blue.jpg",vinculo:"#"},{hotel:"ESTELAR APARTAMENTOS MEDELLIN",image:"medellin-estelar-apartamentos-medellin.jpg",vinculo:"#"}]	
+							each item, contador in hotelesmedellin
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#barranquilla.destinos-slider
+							-var hotelesbaranquilla=[{hotel:"HOTEL ESTELAR EN ALTO PRADO",image:"hotel-estelar-alto-prado.jpg",vinculo:"#"},{hotel:"ESTELAR APARTAMENTOS BARRANQUILLA",image:"estelar-apartamentos-barraquilla.jpg",vinculo:"#"}]
+							each item, contador in hotelesbaranquilla
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#bucaramanga.destinos-slider
+							-var hotelesbucaramanga=[{hotel:"ESTELAR APARTAMENTOS BUCARAMANGA",image:"estelar-apartamentos-bucaramanga.jpg",vinculo:"#"}];
+							each item, contador in hotelesbucaramanga
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#cali.destinos-slider
+							-var hotelescali=[{hotel:"INTERCONTINENTAL CALI",image:"intercontinental-cali.jpg",vinculo:"#"}];
+							each item, contador in hotelescali
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#cartagena.destinos-slider
+							-var hotelescartagena=[{hotel:"ESTELAR GRAND PLAYA MANZANILLO BY OCCIDENTAL HOTELS & RESORTS",image:"estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg",vinculo:"#"},{hotel:"ESTELAR CARTAGENA DE INDIAS HOTEL Y CENTRO DE CONVENCIONES",image:"intercontinental-cartagena.jpg",vinculo:"#"},{hotel:"HOTEL ESTELAR OCEANIA",image:"hotel-estelar-oceania.jpg",vinculo:"#"}];
+							each item, contador in hotelescartagena
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#ibague.destinos-slider
+							-var hotelesibague=[{hotel:"HOTEL ESTELAR ALTAMIRA",image:"estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg",vinculo:"#"}];
+							each item, contador in hotelesibague
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#manizales.destinos-slider
+							-var hotelesmanizales=[{hotel:"HOTEL ESTELAR ALTAMIRA",image:"estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg",vinculo:"#"}];
+							each item, contador in hotelesmanizales
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#paipa.destinos-slider
+							-var hotelespaipa=[{hotel:"HOTEL ESTELAR ALTAMIRA",image:"estelar-grand-plaza-manzanillo-by-occintal-hotel-resorts.jpg",vinculo:"#"}];
+							each item, contador in hotelespaipa
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#santamarta.destinos-slider
+							-var hotelessantamarta=[{hotel:"ESTELAR SANTAMAR HOTEL & CENTRO DE CONVENCIONES",image:"estelar-santamar-hotel-y-centro-de-convenciones.jpg",vinculo:"#"}];
+							each item, contador in hotelessantamarta
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#villavicencio.destinos-slider
+							-var hotelesvillavicencio=[{hotel:"ESTELAR VILLAVICENCIO HOTEL Y CENTRO DE CONVENCIONES",image:"estelar-villavicencio-y-centro-de-convenciones.jpg",vinculo:"#"}];
+							each item, contador in hotelesvillavicencio
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+						div#yopal.destinos-slider
+							-var hotelesyopal=[{hotel:"HOTEL ESTELAR YOPAL",image:"hotel-estelar-yopal.jpg",vinculo:"#"}];
+							each item, contador in hotelesyopal
+								div.item-destino
+									div.item-imagen
+										a.selecionar-hotel.btn-reservar(href=item.linkh, target="_blank") RESERVAR
+										//- div.overlay-reserva
+										//img hotel
+										+image('hoteles/'+item.image, item.hotel)(class="tumb-hotel")
+										///-img hotel
+									h4.titulo-item
+										a.selecionar-hotel(href=item.linkh, target="_blank") #{item.hotel}
+
 						div.botones
 						
-						//- div.row-destino
-						//- 	//- Cilco each para llamar los hoteles ,  imagnenes y vinculos
-						//- 	-list = ['Hotel ESTELAR Windsor house', 'Hotel ESTELAR suites jones', 'Hotel ESTELAR parque de la 93', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100']
-						//- 	-img = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-						//- 	-link = ['#', '#', '#', '#']
-						//- 	each item, contador in list
-						//- 		div.item-destino
-						//- 			div.item-imagen
-						//- 				button.btn-reservar.active RESERVAR
-						//- 				div.overlay-reserva
-						//- 				img(src="images/aaa.png")
-						//- 			h4.titulo-item #{item}
-						//- 		//- span #{img[contador]}
 					h2.copy-footer MAKE LIFE A RIDE
 					//-Modulo de reservas
 				div.modulo-reservas

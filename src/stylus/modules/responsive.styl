@@ -1,6 +1,23 @@
 @media(min-width: 320px)
+	.boton-validar-placa,
+	.boton-actualizar-datos,
+	.continuar-actividad
+		display block
+		margin 0 auto
+		width 85%
+	.campo-validar-placa
+		padding 1rem
+		width 85%
+	.boton-validar-placa
+		background-color rgba(0 0 0 0.4)
 	.content-destino
 		padding-top 1.2rem
+	.columna-form1
+		padding-top 0.5rem
+	.content-actualizar-datos
+		padding-top 1rem
+	.copy-footer
+		text-shadow 0 0 1.8px black
 	.logo-estatico
 		#arptc
 			display none
@@ -9,7 +26,12 @@
 			display none
 	.item-imagen
 		width 10rem
-		height 10rem		
+		height 10rem
+	.item-destino
+		width 50%
+	.destinos-slider
+		&.active
+			max-height 80rem		
 @media (max-width: 480px) and (max-height: 320px) and (orientation:landscape)
 	.titulo-descripcion-actividad
 		font-size 3rem
@@ -51,13 +73,14 @@
 @media(min-width: 768px)
 // aqui el hover en desktop
 	.item-destino
+		width 33.3333%
 		.btn-reservar
 			opacity 0
 		&:hover
 			.btn-reservar
 				opacity 1
 	.manzanillo
-		bottom -160%
+		bottom -70%
 	.articulo-descripcion-actividad
 		border-right solid 0.5rem white
 		width 50%
@@ -75,6 +98,7 @@
 			left -20%
 	.campo-validar-placa
 		width 50%
+		font-size 2.5rem
 	.content-validar-placa
 		padding-top 1rem
 	.content-elegir-destino
@@ -109,9 +133,9 @@
 			&.ocultar-logo-llenar-formulario
 				display block
 		&.elegir-hotel
-			left 10%
+			left 3%
 			top 9%
-			width 15%
+			width 26%
 		&.inicial, &.validar-placa, &.llenar-formulario, &.elegir-hotel
 			transitionBase()
 	.logo-a-rodar-por-colombia
@@ -175,41 +199,153 @@
 			font-size 1.5rem
 			padding 0.1rem
 			height 2.3rem
-
+@media(min-width: 891px)
+	.logo-estatico
+		&.inicial
+			width 35%
+			margin-left 3%
+@media(min-width: 1024px)
+	.logo-estatico
+		&.elegir-hotel
+			left 1%
+			top 10%
+			width 27%
+	.manzanillo
+		bottom -60%
 @media(min-width: 1082px)
+	.item-destino
+		width 25%
 	.logo-estatico
 		&.inicial
 			left 50%
 			top 5%
-			width 19%
+			width 29%
 	.content-elegir-destino
 		margin-left 30%
 		width 70%
+	.manzanillo
+		bottom -60%
 @media(min-width: 1152px)
 	.logo-a-rodar-por-colombia
 		&.form
 			#arptc
 				display block
 				opacity 1
+	.manzanillo
+		bottom -60%
 @media(min-width: 1300px)
 	.logo-estatico
 		&.inicial
 			left 55%
 			top 12%
-			width 20%
+			width 30%
+		&.elegir-hotel
+			left 15%
+			top 10%
+			width 17%
+@media(min-width: 1300px) and (min-height:588px)
+	.logo-estatico
+		&.inicial
+			left 53%
+			top 7%
+			width 25%
+@media(min-width: 1300px) and (min-height:700px)
+	.logo-estatico
+		&.inicial
+			left 53%
+			top 7%
+			width 25%
+@media(min-width: 1305px)
+	.vp
+		&.validar-placa
+			padding-bottom 0
+		&.llenar-formulario
+			padding-bottom 20%
+	.logo-estatico
+		&.inicial
+			left 49%
+			top 4%
+			width 28%
+	.manzanillo
+		bottom -60%
+@media(min-width: 1500px)
+	.logo-estatico
+		&.inicial
+			left 55%
+			top 12%
+			width 26%
 	.content-descripcion-actividad
 		padding-top 6%
 	.titulo-descripcion-actividad
 		font-size 6rem
 	.content-validar-placa
-		padding-top 6%
+		padding-top 3%
 	.columna-form1
 		font-size 1.8rem
 	.content-elegir-destino
 		font-size 2rem
+	.bgimg.puerta-metalica-izq,
+	.bgimg.puerta-metalica-dere,
+	.bgimg.moto-bmw
+		bottom: -6%;
+	.vp
+		padding-top 10%
+		&.llenar-formulario
+			padding-bottom 21%
+		&.destino
+			padding-bottom 10%
+	.manzanillo
+		bottom -70%
+@media(min-width: 1700px)
+	.campo-validar-placa
+		font-size 3.5rem
+	.logo-estatico
+		&.inicial
+			top 24%
+	.vp
+		padding-top 10%
+		&.llenar-formulario
+			padding-bottom 21%
+	.manzanillo
+		bottom -120%
 @media (max-width: 1223px) and (orientation: portrait)
 	.vp
 		padding-bottom 45%
 @media (max-width: 800px) and (orientation: portrait)
 	.vp
 		padding-bottom 60%
+@media (max-width: 768px) and (max-height: 1024px) and (orientation:portrait)
+	.logo-estatico
+		&.validar-placa
+			bottom 35%
+			left 46%
+			width 38%
+	.vp
+		&.llenar-formulario
+			padding-bottom 90%
+	.bgimg
+		&.puerta-metalica-izq,
+		&.puerta-metalica-dere,
+		&.moto-bmw 
+			bottom 5%
+		&.piso
+			bottom 10%
+@media (max-width: 320px) and (max-height: 480px) and (orientation:portrait)
+	.content-validar-placa
+		padding-top: 1rem
+	.logo-estatico
+		&.validar-placa
+			bottom 35%
+			left 46%
+			width 38%
+	.vp
+		&.llenar-formulario
+			padding-bottom 49%
+	.bgimg
+		&.puerta-metalica-izq,
+		&.puerta-metalica-dere,
+		&.moto-bmw 
+			bottom 5%
+		&.piso
+			bottom 10%
+	
