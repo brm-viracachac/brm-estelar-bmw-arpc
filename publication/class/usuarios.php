@@ -22,5 +22,40 @@ class Usuarios
 		return(true);
 	}
 
+	function getUsuario(){
+		$usuarioDBO = DB_DataObject::Factory('Usuario');
+		$usuarioDBO->find();
+
+	
+		$usuario = array();
+		$contador = 0;
+
+		while($usuarioDBO->fetch()){
+			$linea = $usuarioDBO->getLink('idLinea','linea','idLinea');
+			$modelo = $usuarioDBO->getLink('idModelo','modelo','idModelo');
+			$departamento = $usuarioDBO->getLink('idDepto','departamento','idDepto');
+			$ciudad = $usuarioDBO->getLink('idCiudad','ciudad','idCiudad');
+
+			$usuario[$contador]->placa = $usuarioDBO->placa;
+			$usuario[$contador]->nombre = $usuarioDBO->nombre;
+			$usuario[$contador]->cedula = $usuarioDBO->cedula;
+			$usuario[$contador]->email = $usuarioDBO->email;
+			$usuario[$contador]->nombreLinea = $linea->nombre;
+			$usuario[$contador]->nombreModelo = $modelo->nombre;
+			$usuario[$contador]->nombreDepto = $departamento->nombre;
+			$usuario[$contador]->nombreCiudad = $ciudad->nombre;
+			$usuario[$contador]->destino = $usuarioDBO->destino;
+			$usuario[$contador]->hotel = $usuarioDBO->hotel;
+			$usuario[$contador]->fecha = $usuarioDBO->fecha;
+
+
+			$contador++;
+		}
+		$usuarioDBO->fetch();
+		
+		return($usuario);
+
+	}
+
 }
 ?>
