@@ -24,9 +24,14 @@ $(document).ready(function(){
         $("#departamento option:selected").each(function() {
             departamento = $(this).val();
             $.post("usuario.php", {departamento: departamento, accion: "cargar_ciudad"}, function(data) {
-                $("#ciudad").html(data);
+                var options = '';
+                var content = JSON.parse(data);
+                for (var i = 0; i < content.length; i++) {
+                   options += '<option value="' + content[i]['idCiudad'] + '">' + content[i]['nombre'] + '</option>';
+                
+                }
+                $("#ciudad").html(options);
             });
-            //$("#ciudad").html("<option value='ds'>sdsdsds</option>");
         });
     });
 

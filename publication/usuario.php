@@ -7,18 +7,30 @@ if(isset($_POST['accion'])){
 
 
 if($accion == 'insertar_usuario'){
-	$usuario = new Usuarios();
+	$limpiar = new CleanDoor();
 
-	$usuario->placa = $_REQUEST['placa'];
-	$usuario->nombre = $_REQUEST['nombre'];
-	$usuario->cedula = $_REQUEST['cedula'];
-	$usuario->email = $_REQUEST['email'];
-	$usuario->idLinea = $_REQUEST['linea'];
-	$usuario->idModelo = $_REQUEST['modelo'];
-	$usuario->idDepto = $_REQUEST['departamento'];
-	$usuario->idCiudad = $_REQUEST['ciudad'];
-	$usuario->destino = $_REQUEST['destino'];
-	$usuario->hotel = $_REQUEST['hotel'];
+	$placa = $limpiar->allClean($_REQUEST['placa']);
+	$nombre = $limpiar->allClean($_REQUEST['nombre']);
+	$cedula = $limpiar->allClean($_REQUEST['cedula']);
+	$email = $limpiar->allClean($_REQUEST['email']);
+	$linea = $limpiar->allClean($_REQUEST['linea']);
+	$modelo = $limpiar->allClean($_REQUEST['modelo']);
+	$departamento = $limpiar->allClean($_REQUEST['departamento']);
+	$ciudad = $limpiar->allClean($_REQUEST['ciudad']);
+	$destino = $limpiar->allClean($_REQUEST['destino']);
+	$hotel = $limpiar->allClean($_REQUEST['hotel']);
+
+	$usuario = new Usuarios();
+	$usuario->placa = $placa;
+	$usuario->nombre = $nombre;
+	$usuario->cedula = $cedula;
+	$usuario->email = $email;
+	$usuario->idLinea = $linea;
+	$usuario->idModelo = $modelo;
+	$usuario->idDepto = $departamento;
+	$usuario->idCiudad = $ciudad;
+	$usuario->destino = $destino;
+	$usuario->hotel = $hotel;
 
 	$usuario->insertar();
 
@@ -30,15 +42,7 @@ if($accion == 'insertar_usuario'){
 	$departamento = $_POST['departamento'];
 	$ciudad = new Ciudades();
 	$datosCiudad = $ciudad->getCiudadDepartamento($departamento);
-	//printVar($datosCiudad);
-	
-	
-	foreach($datosCiudad as $info){
-?>
-	<option value="<?php echo $info->idCiudad; ?>"> <?php echo $info->nombre; ?> </option>
-<?php
-	}
-	
+	echo json_encode($datosCiudad);
 }
 
 

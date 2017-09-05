@@ -57,5 +57,13 @@ class Usuarios
 
 	}
 
+	function verificarPlaca($placa){
+		$usuarioDBO = DB_DataObject::Factory('Usuario');
+		$usuarioDBO->placa  = $placa;
+		
+		$total = $usuarioDBO->count();
+		return($total);
+	}
+
 }
 ?>

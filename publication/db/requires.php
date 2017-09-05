@@ -10,12 +10,14 @@ require_once("./".$prefijo."db/db.modelo.php");
 require_once("./".$prefijo."db/db.departamento.php");
 require_once("./".$prefijo."db/db.ciudad.php");
 require_once("./".$prefijo."db/db.usuario.php");
+require_once("./".$prefijo."class/cleanDoor.php");
 
 require_once("./".$prefijo."class/lineas.php");
 require_once("./".$prefijo."class/modelos.php");
 require_once("./".$prefijo."class/departamentos.php");
 require_once("./".$prefijo."class/ciudades.php");
 require_once("./".$prefijo."class/usuarios.php");
+require_once("./".$prefijo."excel/class.ExportExcel.inc.php");
 
 $smarty = new Smarty();
 
