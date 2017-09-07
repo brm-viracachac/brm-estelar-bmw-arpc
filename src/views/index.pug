@@ -106,7 +106,7 @@ block content
 					p.parrafo-descripcion-actividad.conlinea  Aprovecha un 20% de descuento <br/> en nuestros hoteles
 				div.content-destino
 					label(for="destino" class="titulo-destino" onchange="rescribir-hoteles(this,document.getElementByClassName(items-destinos))") SELECCIONE DESTINO
-					select#selecccionarciudad
+					select#selecccionarciudad.selec-ciudad
 						option(value="") CIUDAD
 						option(value="barranquilla") BARRANQUILLA
 						option(value="bogota")  BOGOTÁ
@@ -271,7 +271,7 @@ block content
 
 						div.botones
 						
-					h2.copy-footer MAKE LIFE A RIDE
+					h2.copy-footer      MAKE <br/>LIFE A<span>---</span><br/>RIDE
 					//-Modulo de reservas
 				div.modulo-reservas
 		+image("moto-footer.png", 'moto-pie')(class="bgimg moto-pie")
