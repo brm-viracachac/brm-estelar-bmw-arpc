@@ -101,9 +101,7 @@
 		font-size 2.5rem
 	.content-validar-placa
 		padding-top 1rem
-	.content-elegir-destino
-		margin-left 30%
-		width 70%
+
 	.columna-form1
 		padding-top 0rem
 		font-size 1.5rem
@@ -148,6 +146,8 @@
 		&.form
 			#arptc
 				display block
+	.texto-elegir-destino
+		padding-top 19%
 	.texto-validar-placa
 		display block
 		margin 0 auto
@@ -183,10 +183,7 @@
 		font-size 1.5rem
 	.columna-form2
 		label
-			font-size 1rem
-	// .content-elegir-destino
-	// 	margin-left 50%
-	// 	width 50%		
+			font-size 1rem	
 	.boton-actualizar-datos
 		background-color rgba(0,0,0,0.2)
 		display block
@@ -204,14 +201,35 @@
 		&.inicial
 			width 35%
 			margin-left 3%
+@media(min-width: 992px)
+	.logo-estatico
+		&.elegir-hotel
+			left 10%
+			top 8%
+			width 20%
+	.texto-elegir-destino
+		padding-top 19%
+		.parrafo-descripcion-actividad.conlinea
+			padding-top 1rem
+			border-bottom 0
+			border-left 0
+			border-right 0
+			border-style dotted solid dashed
+			border-top dotted dashed 0.5rem white
 @media(min-width: 1024px)
 	.logo-estatico
 		&.elegir-hotel
-			left 1%
+			left 15%
 			top 10%
-			width 27%
+			width 13.5%
+	.item-destino
+		.titulo-item
+			margin 0 auto
+			max-width 18rem	
 	.manzanillo
-		bottom -60%
+		bottom -92%
+	.texto-elegir-destino
+		padding-top 19%
 @media(min-width: 1082px)
 	.item-destino
 		width 25%
@@ -220,9 +238,7 @@
 			left 50%
 			top 5%
 			width 29%
-	.content-elegir-destino
-		margin-left 30%
-		width 70%
+
 	.manzanillo
 		bottom -60%
 @media(min-width: 1152px)
@@ -233,6 +249,20 @@
 				opacity 1
 	.manzanillo
 		bottom -60%
+@media(min-width: 1280px) and (height:800px)
+	.logo-estatico
+			&.elegir-hotel
+				left 12%
+				top 8%
+				width 20%
+@media(min-width: 1280px) and (height:950px)
+	.logo-estatico
+			&.elegir-hotel
+				left 12%
+				top 8%
+				width 18%
+		.texto-elegir-destino
+			padding-top 19%
 @media(min-width: 1300px)
 	.logo-estatico
 		&.inicial
@@ -268,6 +298,13 @@
 			width 28%
 	.manzanillo
 		bottom -60%
+@media(min-width: 1440px) and (height:900px)
+	.logo-estatico
+			&.elegir-hotel
+				left 15%
+				top 6%
+				width 18%
+	
 @media(min-width: 1500px)
 	.logo-estatico
 		&.inicial
@@ -295,7 +332,13 @@
 		&.destino
 			padding-bottom 10%
 	.manzanillo
-		bottom -70%
+		bottom -117%
+@media(min-width: 1600px)
+	.logo-estatico
+			&.elegir-hotel
+				left 17%
+				top 6%
+				width 21%
 @media(min-width: 1700px)
 	.campo-validar-placa
 		font-size 3.5rem
@@ -308,6 +351,12 @@
 			padding-bottom 21%
 	.manzanillo
 		bottom -120%
+@media(min-width: 1815px)
+	.logo-estatico
+			&.elegir-hotel
+				left 19%
+				top 6%
+				width 21%
 @media (max-width: 1223px) and (orientation: portrait)
 	.vp
 		padding-bottom 45%

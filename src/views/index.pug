@@ -14,7 +14,7 @@ block content
 	//- Seccion de inicio
 	.logo-estatico.inicial.animated.bounceIn
 		include ../templates/includes/a-rodar-por-toda-colombia-01.svg
-	section.vp.validar-placa
+	//section.vp.validar-placa
 		div.container.content-descripcion-actividad
 			div.row
 				article.articulo-descripcion-actividad
@@ -25,7 +25,7 @@ block content
 					include ../templates/includes/a-rodar-por-toda-colombia-01.svg
 				button.btn-nav.continuar-actividad.external.animated.pulse.infinite(data-vinculo="validar-placa" type="button") CONTINUAR
 	//- seccion de validacion de placas
-	section#validar-placa.vp.llenar-formulario.seccion-oculta
+	//section#validar-placa.vp.llenar-formulario.seccion-oculta
 		div.container.content-validar-placa
 			div.row
 				p.texto-validar-placa Para acceder al beneficio, Ingresa el número de la placa de tu motocicleta.
@@ -44,7 +44,7 @@ block content
 		+image("moto.png", 'moto-bmw')(class="bgimg moto-bmw")
 		+image("piso.png", 'piso-bmw')(class="bgimg piso")
 	//- seccion de actualizar datos
-	section#llenar-formulario.formulario.elegir-hotel.seccion-oculta
+	//section#llenar-formulario.formulario.elegir-hotel.seccion-oculta
 		div.container-fluid.content-actualizar-datos
 			div.row
 				//- formulario de datos
@@ -99,9 +99,11 @@ block content
 			+image("manzanillo.png", 'manzanillo')(class="bgimg manzanillo")
 	//- seccion de  seleccionar destino
 	//- section#elegir-hotel.vp.destino.seccion-oculta
-	section#elegir-hotel.vp.destino.seccion-oculta
+	section#elegir-hotel.vp.destino
 		div.container.content-elegir-destino
 			div.row
+				div.texto-elegir-destino
+					p.parrafo-descripcion-actividad.conlinea  Aprovecha un 20% de descuento <br/> en nuestros hoteles
 				div.content-destino
 					label(for="destino" class="titulo-destino" onchange="rescribir-hoteles(this,document.getElementByClassName(items-destinos))") SELECCIONE DESTINO
 					select#selecccionarciudad
