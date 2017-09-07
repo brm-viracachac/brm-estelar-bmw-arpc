@@ -4,7 +4,8 @@ global $prefijo;
 error_reporting(0);
 
 require_once("./".$prefijo."db/DBO.php");
-require_once("./".$prefijo."Smarty/libs/Smarty.class.php");
+//require_once("./".$prefijo."Smarty/libs/Smarty.class.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/Smarty/libs/Smarty.class.php");
 require_once("./".$prefijo."db/db.linea.php");
 require_once("./".$prefijo."db/db.modelo.php");
 require_once("./".$prefijo."db/db.departamento.php");

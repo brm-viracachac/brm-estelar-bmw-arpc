@@ -731,7 +731,7 @@
 </svg>
 
         </div>
-        <button class="btn-nav continuar-actividad external animated pulse infinite" data-vinculo="validar-placa" type="button">CONTINUAR</button>
+        <button class="btn-nav continuar-actividad external animated pulse infinite" data-vinculo="validar-placa" type="button" >CONTINUAR</button>
       </div>
     </div>
   </section>
@@ -746,7 +746,7 @@
           <div class="form form-placa">
             <label class="titulo-placa" for="placa">PLACA</label>
             <input class="campo-validar-placa" id="placa" name="placa" type="text" minlength="5" maxlength="6" placeholder="aaa23a">
-            <button class="boton-validar-placa animated pulse infinite" type="button" data-vinculo="llenar-formulario">CONTINUAR</button>
+            <button class="boton-validar-placa animated pulse infinite" type="button" data-vinculo="llenar-formulario" >CONTINUAR</button>
           </div>
         </form>
       </div>
@@ -776,6 +776,7 @@
                <div class="form form-linea">
                 <label for="linea">LÍNEA MOTOCICLETA:</label>
                 <select id="linea" name="linea">
+                		<option value="">Seleccione</option>
                   		{foreach from=$linea item=lineas}
 					      <option value="{$lineas->idLinea}"> 
 					      		{$lineas->nombre}
@@ -786,6 +787,7 @@
               <div class="form form-modelo">
                 <label for="modelo">MODELO:</label>
                 <select id="modelo" name="modelo">
+                		<option value="">Seleccione</option>
                   		{foreach from=$modelo item=modelos}
                   			<option value="{$modelos->idModelo}">
 								{$modelos->nombre}	

@@ -26,9 +26,12 @@ $(document).ready(function(){
             $.post("usuario.php", {departamento: departamento, accion: "cargar_ciudad"}, function(data) {
                 var options = '';
                 var content = JSON.parse(data);
-                for (var i = 0; i < content.length; i++) {
-                   options += '<option value="' + content[i]['idCiudad'] + '">' + content[i]['nombre'] + '</option>';
-                
+                if(content == ''){
+                    options = '<option value="">SELECCIONE</option>';
+                }else{
+                    for (var i = 0; i < content.length; i++) {
+                        options += '<option value="' + content[i]['idCiudad'] + '">' + content[i]['nombre'] + '</option>';
+                    }
                 }
                 $("#ciudad").html(options);
             });

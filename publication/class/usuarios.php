@@ -5,9 +5,9 @@ class Usuarios
 	function insertar(){
 		$usuarioDBO = DB_DataObject::Factory('Usuario');
 
-		$usuarioDBO->nombre = strtoupper(utf8_decode($this->nombre));
+		$usuarioDBO->nombre = utf8_decode($this->nombre);
 		$usuarioDBO->cedula = $this->cedula;
-		$usuarioDBO->email = strtoupper($this->email);
+		$usuarioDBO->email = $this->email;
 		$usuarioDBO->idLinea = $this->idLinea;
 		$usuarioDBO->idModelo = $this->idModelo;
 		$usuarioDBO->idDepto = $this->idDepto;
