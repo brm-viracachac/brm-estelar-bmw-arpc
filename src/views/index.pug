@@ -55,30 +55,30 @@ block content
 								p
 									span.mensaje-alerta
 							div.form.form-nombre
-								label(for="nombre") NOMBRE DEL PROPIETARIO:
-								input(id="nombre", name="nombre", type="text", placeholder="NOMBRE APELLIDO")
+								label(for="nombre") Nombre del Propietario:
+								input(id="nombre", name="nombre", type="text", placeholder="Nombre Apellido")
 							div.form.form-cedula
-								label(for="cedula") CÉDULA:
+								label(for="cedula") Cédula:
 								input(id="cedula", name="cedula", type="number", placeholder="#######")
 							div.form.form-email
-								label(for="email") EMAIL:
+								label(for="email") Correo electronico
 								input(id="email", name="email", type="email", placeholder="usuario@correo.com")
 							div.form.form-linea
-								label(for="linea") LÍNEA MOTOCICLETA:
+								label(for="linea") Línea Motocicleta:
 								select
 									option Opción 1
 							div.form.form-modelo
-								label(for="modelo") MODELO:
+								label(for="modelo") Modelo:
 								select
 									option Opción 2
 							div.form.form-cuidad
-								label(for="departamento") DEPARTAMENTO
+								label(for="departamento") Departamento
 								select(id="departamento", name="departament")
-									option DEPARTAMENTO
+									option Departamento
 							div.form.form-cuidad
 								label(for="ciudad") Ciudad
 								select(id="ciudad", name="ciudad")
-									option CIUDAD
+									option Ciudad
 						div.columna-form2
 							.logo-a-rodar-por-colombia.form
 								include ../templates/includes/a-rodar-por-toda-colombia-01.svg
@@ -123,7 +123,7 @@ block content
 						//- div.row-destino
 						//- Cilco each para llamar los hoteles ,  imagnenes y vinculos
 						div#bogota.destinos-slider
-							-var hotelesbogota =[{"hotel":"HOTEL ESTELAR LA FONTANA","image":"hotel-estelar-fontana.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR PARQUE DE LA 93","image":"hotel-estelar-93.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR SUITES JONES","image":"hotel-estelar-suites-jones.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR WINDSOR HOUSE","image":"hotel-estelar-windsor.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR CALLE 100","image":"hotel-estelar-100.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS BOGOTA","image":"apartamentos-bogota.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS AEROPUERTO","image":"apartamentos-aeropuerto.jpg","linkh":"#"},{hotel:"HOTEL ESTELAR DE LA FERIA",image:"hotel-estelar-feria.jpg",vinculo:"#"}]				
+							-var hotelesbogota =[{"hotel":"HOTEL ESTELAR LA FONTANA","image":"hotel-estelar-fontana.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR PARQUE DE LA 93","image":"hotel-estelar-93.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR SUITES JONES","image":"hotel-estelar-suites-jones.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR WINDSOR HOUSE","image":"hotel-estelar-windsor.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR CALLE 100","image":"hotel-estelar-100.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS BOGOTA","image":"apartamentos-bogota.jpg","linkh":"#"},{"hotel":"ESTELAR APARTAMENTOS AEROPUERTO","image":"apartamentos-aeropuerto.jpg","linkh":"#"},{"hotel":"HOTEL ESTELAR DE LA FERIA","image":"hotel-estelar-feria.jpg","vinculo":"#"}]				
 							each item, contador in hotelesbogota
 								div.item-destino
 									div.item-imagen
