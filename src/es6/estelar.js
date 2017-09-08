@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
 						$('.logo-estatico').attr('class', 'logo-estatico').addClass(vinculo);
 						// $('.logo-estatico.llenar-formulario').addClass('fadeOut');
 						$('.puerta-metalica-izq').addClass('animated bounceInRight');
-						$('.puerta-metalica-dere, .moto-bmw').addClass('animated bounceInLeft');
+						$('.puerta-metalica-dere, .moto-bmw, .humo-bmw').addClass('animated bounceInLeft');
 						//$('.logo').toggleClass(vinculo);
 						location.href = ruta + vinculo;
 					});
