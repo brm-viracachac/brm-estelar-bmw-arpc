@@ -8,7 +8,7 @@ class DataObjects_Modelo extends DB_DataObject {
 
     // you can define these yourself
     
-    var $__table='modelo';                       // table name
+    var $__table='bmw_modelo';                       // table name
     var $idModelo;                              // int primary_key
     var $nombre;                              // string
     

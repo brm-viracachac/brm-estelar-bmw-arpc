@@ -8,7 +8,7 @@ class DataObjects_Ciudad extends DB_DataObject {
 
     // you can define these yourself
     
-    var $__table='ciudad';                       // table name
+    var $__table='bmw_ciudad';                       // table name
     var $idCiudad;                              // int primary_key
     var $idDepto;                               // int
     var $nombre;                              // string

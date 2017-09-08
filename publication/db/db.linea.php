@@ -8,7 +8,7 @@ class DataObjects_Linea extends DB_DataObject {
 
     // you can define these yourself
     
-    var $__table='linea';                       // table name
+    var $__table='bmw_linea';                       // table name
     var $idLinea;                              // int primary_key
     var $nombre;                              // int
 

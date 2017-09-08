@@ -8,7 +8,7 @@ class DataObjects_Usuario extends DB_DataObject {
 
     // you can define these yourself
     
-    var $__table='usuario';                      // table name
+    var $__table='bmw_usuario';                      // table name
     var $idUsuario;                              // int primary_key
     var $nombre;                                 // varchar
     var $cedula;                                 // bigint
