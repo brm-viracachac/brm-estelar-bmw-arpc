@@ -43,5 +43,9 @@ $(document).ready(function(){
             return false;
         }
     });
+
+    $("#cedula").keyup(function() {
+        $("#cedula").val(this.value.match(/[0-9]*/));
+    });
    
 });
