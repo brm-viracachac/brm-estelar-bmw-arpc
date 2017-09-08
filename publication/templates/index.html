@@ -8,6 +8,7 @@
   <meta name="description" content="A rodar por Colombia">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/hoteles-estelar.min.css"><!--[if lt IE]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -340,7 +341,7 @@
 		</g>
 	</g>
 </g>
-<g>
+<g class="ocultar-invita">
 	<g>
 		<path class="st1" d="M140.1,5.5c0.3,0,0.4,0.1,0.4,0.4v2.4c0,0.2-0.1,0.4-0.4,0.4h-2.7v13.1c0,0.3-0.1,0.4-0.4,0.4h-2.5
 			c-0.2,0-0.4-0.1-0.4-0.4V8.7h-2.7c-0.2,0-0.4-0.1-0.4-0.4V5.9c0-0.2,0.1-0.4,0.4-0.4H140.1z"/>
@@ -696,7 +697,7 @@
 		</g>
 	</g>
 </g>
-<g>
+<g class="ocultar-invita">
 	<g>
 		<path class="st1" d="M140.1,5.5c0.3,0,0.4,0.1,0.4,0.4v2.4c0,0.2-0.1,0.4-0.4,0.4h-2.7v13.1c0,0.3-0.1,0.4-0.4,0.4h-2.5
 			c-0.2,0-0.4-0.1-0.4-0.4V8.7h-2.7c-0.2,0-0.4-0.1-0.4-0.4V5.9c0-0.2,0.1-0.4,0.4-0.4H140.1z"/>
@@ -731,14 +732,14 @@
 </svg>
 
         </div>
-        <button class="btn-nav continuar-actividad external animated pulse infinite" data-vinculo="validar-placa" type="button" >CONTINUAR</button>
+        <button class="btn-nav continuar-actividad external animated pulse infinite" data-vinculo="validar-placa" type="button">CONTINUAR</button>
       </div>
     </div>
   </section>
   <section class="vp llenar-formulario seccion-oculta" id="validar-placa">
     <div class="container content-validar-placa">
       <div class="row">
-        <p class="texto-validar-placa">Para acceder al beneficio, Ingresa el número de la placa de tu motocicleta.</p>
+        <p class="texto-validar-placa">Para acceder al beneficio.<br/> Ingresa el número de la placa <br/>de tu motocicleta.</p>
         <form class="form form-validar-placa" id="form-validar-placa">
           <div class="form alertas-placas">
             <p><span class="mensaje-alerta"></span></p>
@@ -746,11 +747,11 @@
           <div class="form form-placa">
             <label class="titulo-placa" for="placa">PLACA</label>
             <input class="campo-validar-placa" id="placa" name="placa" type="text" minlength="5" maxlength="6" placeholder="aaa23a">
-            <button class="boton-validar-placa animated pulse infinite" type="button" data-vinculo="llenar-formulario" >CONTINUAR</button>
+            <button class="boton-validar-placa animated pulse infinite" type="button" data-vinculo="llenar-formulario">CONTINUAR</button>
           </div>
         </form>
       </div>
-    </div><img class="bgimg puerta-metalica-izq" src="images/puerta-izq.png" title="puerta-bmw" alt="puerta-bmw"/><img class="bgimg puerta-metalica-dere" src="images/puerta-dere.png" title="puerta-bmw" alt="puerta-bmw"/><img class="bgimg moto-bmw" src="images/moto.png" title="moto-bmw" alt="moto-bmw"/><img class="bgimg piso" src="images/piso.png" title="piso-bmw" alt="piso-bmw"/>
+    </div><img class="bgimg puerta-metalica-izq" src="images/puerta-izq.png" title="puerta-bmw" alt="puerta-bmw"/><img class="bgimg puerta-metalica-dere" src="images/puerta-dere.png" title="puerta-bmw" alt="puerta-bmw"/><img class="bgimg moto-bmw" src="images/moto.png" title="moto-bmw" alt="moto-bmw"/><img class="bgimg humo-bmw" src="images/humo.png" title="humo-bmw" alt="humo-bmw"/><img class="bgimg piso" src="images/piso.png" title="piso-bmw" alt="piso-bmw"/>
   </section>
   <section class="formulario elegir-hotel seccion-oculta" id="llenar-formulario">
     <div class="container-fluid content-actualizar-datos">
@@ -762,19 +763,19 @@
                 <p><span class="mensaje-alerta"></span></p>
               </div>
               <div class="form form-nombre">
-                <label for="nombre">NOMBRE DEL PROPIETARIO:</label>
-                <input id="nombre" name="nombre" type="text" placeholder="NOMBRE APELLIDO">
+                <label for="nombre">Nombre del Propietario:</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre Apellido">
               </div>
               <div class="form form-cedula">
-                <label for="cedula">CÉDULA:</label>
-                <input id="cedula" name="cedula" type="number" placeholder="1111111">
+                <label for="cedula">Cédula:</label>
+                <input id="cedula" name="cedula" type="number" placeholder="#######">
               </div>
               <div class="form form-email">
-                <label for="email">EMAIL:</label>
+                <label for="email">Correo electronico</label>
                 <input id="email" name="email" type="email" placeholder="usuario@correo.com">
               </div>
-               <div class="form form-linea">
-                <label for="linea">LÍNEA MOTOCICLETA:</label>
+              <div class="form form-linea">
+                <label for="linea">Línea Motocicleta:</label>
                 <select id="linea" name="linea">
                 		<option value="">Seleccione</option>
                   		{foreach from=$linea item=lineas}
@@ -785,7 +786,7 @@
                 </select>
               </div>
               <div class="form form-modelo">
-                <label for="modelo">MODELO:</label>
+                <label for="modelo">Modelo:</label>
                 <select id="modelo" name="modelo">
                 		<option value="">Seleccione</option>
                   		{foreach from=$modelo item=modelos}
@@ -796,7 +797,7 @@
                 </select>
               </div>
               <div class="form form-departamento">
-                <label for="departamento">DEPARTAMENTO</label>
+                <label for="departamento">Departamento:</label>
                 <select id="departamento" name="departamento">
                 		<option value="">Seleccione</option>
                   		{foreach from=$departamento item=departamentos}
@@ -807,7 +808,7 @@
                 </select>
               </div>
               <div class="form form-cuidad">
-                <label for="ciudad">Ciudad</label>
+                <label for="ciudad">Ciudad:</label>
                 <select id="ciudad" name="ciudad">
                   <option value="">Seleccione</option>
                 </select>
@@ -1128,7 +1129,7 @@
 		</g>
 	</g>
 </g>
-<g>
+<g class="ocultar-invita">
 	<g>
 		<path class="st1" d="M140.1,5.5c0.3,0,0.4,0.1,0.4,0.4v2.4c0,0.2-0.1,0.4-0.4,0.4h-2.7v13.1c0,0.3-0.1,0.4-0.4,0.4h-2.5
 			c-0.2,0-0.4-0.1-0.4-0.4V8.7h-2.7c-0.2,0-0.4-0.1-0.4-0.4V5.9c0-0.2,0.1-0.4,0.4-0.4H140.1z"/>
@@ -1163,6 +1164,7 @@
 </svg>
 
               </div>
+              <p class="parrafo-descripcion-actividad conlinea"> Aprovecha un 20% de descuento <br/> en nuestros hoteles</p>
               <div class="form form-autorizacion">
                 <input type="checkbox" id="autorizacion" name="autorizacion">
                 <label for="autorizacion">Autorizo voluntariamente a <span>hoteles estelar</span> para tratar mis datos personales de acuerdo con lo dispuesto en la Ley 1581 de 2012, el Decreto Único 1074 de 2015 y la política de tratamiento de datos personales de Pernod Ricard Colombia. La Información será utilizada para contactarme e informarme sobre actividades de publicidad, mercadeo, comerciales, fidelización, encuestas y eventos.</label>
@@ -1173,13 +1175,12 @@
               </div>
               <div class="form form-declaro">
                 <input type="checkbox" id="declaro" name="declaro">
-                <label for="declaro">Declaro que he leído y acepto <span><a class="ancla-terminos" href="politica-de-datos.html" target="_blank">la política de tratamiento de datos personales</a></span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.</label>
+                <label for="declaro">Declaro que he leído y acepto <span><a class="ancla-terminos politicas" href="politica-de-datos.html" target="_blank">la política de tratamiento de datos personales</a></span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.</label>
               </div>
+              <button class="boton-actualizar-datos animated pulse infinite" type="button" data-vinculo="elegir-hotel">Actualizar Datos</button>
             </div>
           </div>
-          <div class="row">
-            <button class="boton-actualizar-datos animated pulse infinite" type="button" data-vinculo="elegir-hotel">Actualizar Datos</button>
-          </div>
+          <div class="row"></div>
         </form>
         <div class="informacion-manzanillo"></div>
       </div>
@@ -1190,9 +1191,12 @@
   <section class="vp destino seccion-oculta" id="elegir-hotel">
     <div class="container content-elegir-destino">
       <div class="row">
+        <div class="texto-elegir-destino">
+          <p class="parrafo-descripcion-actividad conlinea"> Aprovecha un 20% de descuento <br/> en nuestros hoteles</p>
+        </div>
         <div class="content-destino">
           <label class="titulo-destino" for="destino" onchange="rescribir-hoteles(this,document.getElementByClassName(items-destinos))">SELECCIONE DESTINO</label>
-          <select id="selecccionarciudad">
+          <select class="selec-ciudad" id="selecccionarciudad">
             <option value="">CIUDAD</option>
             <option value="barranquilla">BARRANQUILLA</option>
             <option value="BOGOTÁ"> BOGOTÁ</option>
@@ -1201,7 +1205,7 @@
             <option value="cartagena"> CARTAGENA</option>
             <option value="IBAGUÉ"> IBAGUÉ</option>
             <option value="manizales"> MANIZALES</option>
-            <option value="MEDELLIN"> MEDELLÍN</option>
+            <option value="MEDELLÍN"> MEDELLÍN</option>
             <option value="paipa"> PAIPA</option>
             <option value="santamarta">SANTAMARTA</option>
             <option value="villavicencio"> VILLAVICENCIO</option>
@@ -1217,49 +1221,49 @@
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank">HOTEL ESTELAR LA FONTANA</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR PARQUE DE LA 93">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="HOTEL ESTELAR PARQUE DE LA 93">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-93.jpg" title="HOTEL ESTELAR PARQUE DE LA 93" alt="HOTEL ESTELAR PARQUE DE LA 93"/>
                   <!--/-img hotel-->
                 </div>
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank">HOTEL ESTELAR PARQUE DE LA 93</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR SUITES JONES">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="HOTEL ESTELAR SUITES JONES">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-suites-jones.jpg" title="HOTEL ESTELAR SUITES JONES" alt="HOTEL ESTELAR SUITES JONES"/>
                   <!--/-img hotel-->
                 </div>
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" >HOTEL ESTELAR SUITES JONES</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR WINDSOR HOUSE">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="HOTEL ESTELAR WINDSOR HOUSE">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-windsor.jpg" title="HOTEL ESTELAR WINDSOR HOUSE" alt="HOTEL ESTELAR WINDSOR HOUSE"/>
                   <!--/-img hotel-->
                 </div>
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank">HOTEL ESTELAR WINDSOR HOUSE</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR DE LA FERIA">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="HOTEL ESTELAR DE LA FERIA">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-feria.jpg" title="HOTEL ESTELAR DE LA FERIA" alt="HOTEL ESTELAR DE LA FERIA"/>
                   <!--/-img hotel-->
                 </div>
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank">HOTEL ESTELAR DE LA FERIA</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="HOTEL ESTELAR CALLE 100">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="HOTEL ESTELAR CALLE 100">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/hotel-estelar-100.jpg" title="HOTEL ESTELAR CALLE 100" alt="HOTEL ESTELAR CALLE 100"/>
                   <!--/-img hotel-->
                 </div>
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank">HOTEL ESTELAR CALLE 100</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="ESTELAR APARTAMENTOS BOGOTA">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="ESTELAR APARTAMENTOS BOGOTA">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/apartamentos-bogota.jpg" title="ESTELAR APARTAMENTOS BOGOTA" alt="ESTELAR APARTAMENTOS BOGOTA"/>
                   <!--/-img hotel-->
                 </div>
                 <h4 class="titulo-item"><a class="selecionar-hotel" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank">ESTELAR APARTAMENTOS BOGOTA</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="#" target="_blank" data-hotel="ESTELAR APARTAMENTOS AEROPUERTO">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="ESTELAR APARTAMENTOS AEROPUERTO">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/apartamentos-aeropuerto.jpg" title="ESTELAR APARTAMENTOS AEROPUERTO" alt="ESTELAR APARTAMENTOS AEROPUERTO"/>
                   <!--/-img hotel-->
                 </div>
@@ -1282,7 +1286,7 @@
                 <h4 class="titulo-item"><a class="selecionar-hotel" target="_blank">HOTEL ESTELAR BLUE</a></h4>
               </div>
               <div class="item-destino">
-                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" target="_blank" data-hotel="ESTELAR APARTAMENTOS MEDELLIN">RESERVAR</a>
+                <div class="item-imagen"><a class="selecionar-hotel btn-reservar" href="https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=-X6tWbn2JJPQ8AeJkoEw&gws_rd=ssl" target="_blank" data-hotel="ESTELAR APARTAMENTOS MEDELLIN">RESERVAR</a>
                   <!--img hotel--><img class="tumb-hotel" src="images/hoteles/medellin-estelar-apartamentos-medellin.jpg" title="ESTELAR APARTAMENTOS MEDELLIN" alt="ESTELAR APARTAMENTOS MEDELLIN"/>
                   <!--/-img hotel-->
                 </div>
@@ -1416,7 +1420,7 @@
             </div>
             <div class="botones"></div>
           </div>
-          <h2 class="copy-footer">MAKE LIFE A RIDE</h2>
+          <h2 class="copy-footer">     MAKE <br/>LIFE A<span>---</span><br/>RIDE</h2>
         </div>
         <div class="modulo-reservas"></div>
       </div>
@@ -1426,7 +1430,9 @@
   <!--/-Footer-->
   <!--Scripts-->
   <script src="js/libs/jquery.js"></script>
-  <script src="js/libs.min.js"></script>
+  <script src="js/libs/jquery.validate.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
   <script src="js/estelar.js"></script>
   <script src="js/bmw.js"></script>
+
 </body></html>
