@@ -14,7 +14,7 @@ block content
 	//- Seccion de inicio
 	.logo-estatico.inicial.animated.bounceIn
 		include ../templates/includes/a-rodar-por-toda-colombia-01.svg
-	//section.vp.validar-placa
+	section.vp.validar-placa
 		div.container.content-descripcion-actividad
 			div.row
 				article.articulo-descripcion-actividad
@@ -25,7 +25,7 @@ block content
 					include ../templates/includes/a-rodar-por-toda-colombia-01.svg
 				button.btn-nav.continuar-actividad.external.animated.pulse.infinite(data-vinculo="validar-placa" type="button") CONTINUAR
 	//- seccion de validacion de placas
-	//section#validar-placa.vp.llenar-formulario.seccion-oculta
+	section#validar-placa.vp.llenar-formulario.seccion-oculta
 		div.container.content-validar-placa
 			div.row
 				p.texto-validar-placa Para acceder al beneficio, Ingresa el número de la placa de tu motocicleta.
@@ -44,7 +44,7 @@ block content
 		+image("moto.png", 'moto-bmw')(class="bgimg moto-bmw")
 		+image("piso.png", 'piso-bmw')(class="bgimg piso")
 	//- seccion de actualizar datos
-	section#llenar-formulario.formulario.elegir-hotel
+	section#llenar-formulario.formulario.elegir-hotel.seccion-oculta
 		div.container-fluid.content-actualizar-datos
 			div.row
 				//- formulario de datos
@@ -91,7 +91,7 @@ block content
 								label(for="aceptar") Conozco y <a class="ancla-terminos" href="terminos-y-condiciones.html" target="_blank">acepto términos y condiciones</a> de <span>A rodar con hoteles y bmw</span>
 							div.form.form-declaro
 								input(type="checkbox", id="declaro", name="declaro")
-								label(for="declaro") Declaro que he leído y acepto <span><a class="ancla-terminos" href="politica-de-datos.html" target="_blank">la política de tratamiento de datos personales</a></span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.
+								label(for="declaro") Declaro que he leído y acepto <span><a class="ancla-terminos politicas" href="politica-de-datos.html" target="_blank">la política de tratamiento de datos personales</a></span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.
 							button.boton-actualizar-datos.animated.pulse.infinite(type="button", data-vinculo="elegir-hotel") Actualizar Datos
 					div.row
 
