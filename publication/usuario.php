@@ -20,19 +20,43 @@ if($accion == 'insertar_usuario'){
 	$destino = $limpiar->allClean($_REQUEST['destino']);
 	$hotel = $limpiar->allClean($_REQUEST['hotel']);
 
-	$usuario = new Usuarios();
-	$usuario->placa = $placa;
-	$usuario->nombre = $nombre;
-	$usuario->cedula = $cedula;
-	$usuario->email = $email;
-	$usuario->idLinea = $linea;
-	$usuario->idModelo = $modelo;
-	$usuario->idDepto = $departamento;
-	$usuario->idCiudad = $ciudad;
-	$usuario->destino = $destino;
-	$usuario->hotel = $hotel;
+	$usuario3 = new Usuarios();
+	$result = $usuario3->verificarPlaca($placa);
+	if($result == 0){
+		$usuario = new Usuarios();
+		$usuario->placa = $placa;
+		$usuario->nombre = $nombre;
+		$usuario->cedula = $cedula;
+		$usuario->email = $email;
+		$usuario->idLinea = $linea;
+		$usuario->idModelo = $modelo;
+		$usuario->idDepto = $departamento;
+		$usuario->idCiudad = $ciudad;
+		//$usuario->destino = $destino;
+		//$usuario->hotel = $hotel;
+		$usuario->insertar();
 
-	$usuario->insertar();
+		$usuario2 = new Usuarios();
+		$idRegistro = $usuario2->idRegistro($placa);
+
+		$hotelUsuario = new HotelUsuario();
+		$hotelUsuario->idUsuario = $idRegistro;
+		$hotelUsuario->destino = $destino;
+		$hotelUsuario->hotel = $hotel;
+		$hotelUsuario->insertar();
+
+	}else{
+		$usuario2 = new Usuarios();
+		$idRegistro = $usuario2->idRegistro($placa);
+
+		$hotelUsuario = new HotelUsuario();
+		$hotelUsuario->idUsuario = $idRegistro;
+		$hotelUsuario->destino = $destino;
+		$hotelUsuario->hotel = $hotel;
+		$hotelUsuario->insertar();
+	}
+
+	
 
 	// echo "<script>alert('Datos insertados correctamente.');
 	//	</script>";

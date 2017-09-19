@@ -21,5 +21,20 @@ class Lineas
 
 	}
 
+	function getLineaCodigo($id){
+		$lineaVerDBO = DB_DataObject::Factory('Linea');
+		$lineaVerDBO->selectAdd('nombre');
+		$lineaVerDBO->idLinea = $id;
+		//$ingredienteDBO->orderBy("id ASC");
+		$lineaVerDBO->find();
+
+
+		while($lineaVerDBO->fetch()){
+			$nombre = $lineaVerDBO->nombre;
+		}
+		return($nombre);
+
+	}
+
 }
 ?>

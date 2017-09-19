@@ -22,5 +22,20 @@ class Departamentos
 
 	}
 
+	function getDeparCodigo($id){
+		$DepartamentoVerDBO = DB_DataObject::Factory('Departamento');
+		$DepartamentoVerDBO->selectAdd('nombre');
+		$DepartamentoVerDBO->idDepto = $id;
+		//$ingredienteDBO->orderBy("id ASC");
+		$DepartamentoVerDBO->find();
+
+
+		while($DepartamentoVerDBO->fetch()){
+			$nombre = $DepartamentoVerDBO->nombre;
+		}
+		return($nombre);
+
+	}
+
 }
 ?>

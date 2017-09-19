@@ -1,6 +1,10 @@
 <?php
 require_once('db/requires.php');
 
+
+
+
+
 /* Carga información tabla de lineas. */
 $lineas = new Lineas();
 $datosLineas = $lineas->getLinea();

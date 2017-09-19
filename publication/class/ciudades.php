@@ -23,5 +23,20 @@ class Ciudades
 		return($Ciudades);
 	}
 
+	function getCiudadCodigo($id){
+		$CiudadVerDBO = DB_DataObject::Factory('Ciudad');
+		$CiudadVerDBO->selectAdd('nombre');
+		$CiudadVerDBO->idCiudad = $id;
+		//$ingredienteDBO->orderBy("id ASC");
+		$CiudadVerDBO->find();
+
+
+		while($CiudadVerDBO->fetch()){
+			$nombre = $CiudadVerDBO->nombre;
+		}
+		return($nombre);
+
+	}
+
 }
 ?>

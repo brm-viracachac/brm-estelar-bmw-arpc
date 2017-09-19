@@ -12,8 +12,6 @@ class Usuarios
 		$usuarioDBO->idModelo = $this->idModelo;
 		$usuarioDBO->idDepto = $this->idDepto;
 		$usuarioDBO->idCiudad = $this->idCiudad;
-		$usuarioDBO->destino = strtoupper(utf8_decode($this->destino));
-		$usuarioDBO->hotel = utf8_decode($this->hotel);
 		$usuarioDBO->placa = strtoupper($this->placa);
 
 		$usuarioDBO->insert();
@@ -23,7 +21,7 @@ class Usuarios
 	}
 
 	function getUsuario(){
-		$usuarioDBO = DB_DataObject::Factory('Usuario');
+		$usuarioDBO = DB_DataObject::Factory('HotelUsuario');
 		$usuarioDBO->find();
 
 	
@@ -31,23 +29,36 @@ class Usuarios
 		$contador = 0;
 
 		while($usuarioDBO->fetch()){
-			$linea = $usuarioDBO->getLink('idLinea','linea','idLinea');
-			$modelo = $usuarioDBO->getLink('idModelo','modelo','idModelo');
-			$departamento = $usuarioDBO->getLink('idDepto','departamento','idDepto');
-			$ciudad = $usuarioDBO->getLink('idCiudad','ciudad','idCiudad');
+			$usu = $usuarioDBO->getLink('idUsuario','Usuario','idUsuario');
 
-			$usuario[$contador]->placa = $usuarioDBO->placa;
-			$usuario[$contador]->nombre = $usuarioDBO->nombre;
-			$usuario[$contador]->cedula = $usuarioDBO->cedula;
-			$usuario[$contador]->email = $usuarioDBO->email;
-			$usuario[$contador]->nombreLinea = $linea->nombre;
-			$usuario[$contador]->nombreModelo = $modelo->nombre;
-			$usuario[$contador]->nombreDepto = $departamento->nombre;
-			$usuario[$contador]->nombreCiudad = $ciudad->nombre;
+			$usuario[$contador]->placa = $usu->placa;
+			$usuario[$contador]->nombre = $usu->nombre;
+			$usuario[$contador]->cedula = $usu->cedula;
+			$usuario[$contador]->email = $usu->email;
+			
+			/* Trae el nombre de la linea */
+			$linea = new Lineas();
+			$nom_linea = $linea->getLineaCodigo($usu->idLinea);
+			$usuario[$contador]->nombreLinea = $nom_linea;
+
+			/* Trae el nombre del modelo */
+			$modelo = new Modelos();
+			$nom_modelo = $modelo->getModeloCodigo($usu->idModelo);
+			$usuario[$contador]->nombreModelo = $nom_modelo;
+
+			/* Trae el nombre del departamento */
+			$departamento = new Departamentos();
+			$nom_depto = $departamento->getDeparCodigo($usu->idDepto);
+			$usuario[$contador]->nombreDepto = $nom_depto;
+			
+			/* Trae el nombre de la ciudad */
+			$ciudad = new Ciudades();
+			$nom_ciudad = $ciudad->getCiudadCodigo($usu->idCiudad);
+			$usuario[$contador]->nombreCiudad = $nom_ciudad;
+
 			$usuario[$contador]->destino = $usuarioDBO->destino;
 			$usuario[$contador]->hotel = $usuarioDBO->hotel;
-			$usuario[$contador]->fecha = $usuarioDBO->fecha;
-
+			$usuario[$contador]->fecha = $usu->fecha;
 
 			$contador++;
 		}
@@ -63,6 +74,17 @@ class Usuarios
 		
 		$total = $usuarioDBO->count();
 		return($total);
+	}
+
+	function idRegistro($placa){
+		$usuarioDBO = DB_DataObject::Factory('Usuario');
+		$usuarioDBO->selectAdd('idUsuario');
+		$usuarioDBO->placa  = $placa;
+		$usuarioDBO->find();
+		while($usuarioDBO->fetch()){
+			$id = $usuarioDBO->idUsuario;
+		}
+		return($id);
 	}
 
 }

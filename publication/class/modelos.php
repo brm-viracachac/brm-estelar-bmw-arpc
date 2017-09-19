@@ -22,5 +22,20 @@ class Modelos
 
 	}
 
+	function getModeloCodigo($id){
+		$ModeloVerDBO = DB_DataObject::Factory('Modelo');
+		$ModeloVerDBO->selectAdd('nombre');
+		$ModeloVerDBO->idModelo = $id;
+		//$ingredienteDBO->orderBy("id ASC");
+		$ModeloVerDBO->find();
+
+
+		while($ModeloVerDBO->fetch()){
+			$nombre = $ModeloVerDBO->nombre;
+		}
+		return($nombre);
+
+	}
+
 }
 ?>

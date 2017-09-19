@@ -16,7 +16,7 @@ $(document).ready(function(){
         //var hotel = "Hotel Calle 100";
         $.post("usuario.php", {placa: placa, nombre: nombre, cedula: cedula, email: email,linea: linea,modelo: modelo, departamento: departamento,
                             ciudad: ciudad, destino: destino, hotel: hotel, accion: "insertar_usuario" }, function(data) {
-                location.reload();
+                
             });
     });
 

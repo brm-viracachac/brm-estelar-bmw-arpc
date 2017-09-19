@@ -17,8 +17,6 @@ class DataObjects_Usuario extends DB_DataObject {
     var $idModelo;                               // int
     var $idDepto;                                // int
     var $idCiudad;                               // int
-    var $destino;                                // varchar
-    var $hotel;                                  // varchar
     var $fecha;                                  // date
     var $placa;                                  // placa
     
@@ -39,8 +37,6 @@ class DataObjects_Usuario extends DB_DataObject {
             'idModelo'     => DB_DATAOBJECT_INT,
             'idDepto'     => DB_DATAOBJECT_INT,
             'idCiudad'     => DB_DATAOBJECT_INT,
-            'destino'     => DB_DATAOBJECT_STR,
-            'hotel'     => DB_DATAOBJECT_STR,
             'fecha'     => DB_DATAOBJECT_STR + DB_DATAOBJECT_DATE + DB_DATAOBJECT_TIME,
             'placa'   => DB_DATAOBJECT_STR,
         );
